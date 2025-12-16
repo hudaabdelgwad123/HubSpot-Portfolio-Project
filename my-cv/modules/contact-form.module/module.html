@@ -1,0 +1,157 @@
+<section class="contact-section" id="contact"
+         style="
+           --contact-bg: {{ module.contact_styles_background.background_color.color|default('#f3f4f6') }};
+           --contact-card-bg: {{ module.contact_styles_card.card_background_color.color|default('#ffffff') }};
+           --contact-accent: {{ module.contact_styles_text.accent_color.color|default('#6366f1') }};
+           --contact-input-bg: {{ module.contact_styles_inputs.input_background_color.color|default('#f9fafb') }};
+           --contact-glass-enabled: {% if module.contact_styles_effects.enable_glassmorphism %}1{% else %}0{% endif %};
+           --contact-blur: {{ module.contact_styles_effects.blur_amount|default(10) }}px;
+         ">
+  <div class="container">
+    <div class="contact-header">
+      {% if module.section_title %}
+      <h2 class="section-title">{{ module.section_title }}</h2>
+      {% endif %} {% if module.section_subtitle %}
+      <p class="section-subtitle">{{ module.section_subtitle }}</p>
+      {% endif %}
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3 class="contact-info-title">Contact Information</h3>
+
+        <div class="contact-info-items">
+          {% if module.email %}
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:{{ module.email }}">{{ module.email }}</a>
+            </div>
+          </div>
+          {% endif %} {% if module.phone %}
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <a href="tel:{{ module.phone }}">{{ module.phone }}</a>
+            </div>
+          </div>
+          {% endif %} {% if module.location %}
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>{{ module.location }}</p>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="social-links">
+          {% if module.linkedin_url %}
+          <a
+            href="{{ module.linkedin_url }}"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          {% endif %} {% if module.github_url %}
+          <a href="{{ module.github_url }}" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          {% endif %} {% if module.twitter_url %}
+          <a
+            href="{{ module.twitter_url }}"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if module.show_contact_form %}
+      <div class="contact-form-wrapper">
+        <form
+          class="contact-form"
+          id="contactForm"
+          method="POST"
+          novalidate
+          data-to-email="{{ module.email|default('') }}"
+        >
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Enter your full name"
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="your.email@example.com"
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              placeholder="What is this about?"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              placeholder="Write your message here..."
+            ></textarea>
+          </div>
+
+          <!-- Honeypot field for spam protection (hidden from users) -->
+          <input
+            type="text"
+            name="_gotcha"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+
+          <div class="form-message" id="formMessage"></div>
+        </form>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,158 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{# REQUIRED: Team Members Section #}
+
+<section class="team-section section section-dark">
+  <div class="container">
+    
+    {# Section Header #}
+    <div class="section-header">
+      <h2>{{ module.section_title|default('Meet Our Team') }}</h2>
+      {% if module.section_description %}
+        <p>{{ module.section_description }}</p>
+      {% endif %}
+    </div>
+    
+    {# Team Members Grid #}
+    <div class="team-grid grid grid-{{ module.columns|default('3') }}">
+      {% for member in module.team_members %}
+        <div class="team-member-card card">
+          
+          {# Member Image #}
+          {% if member.image.src %}
+            <img src="{{ member.image.src }}" alt="{{ member.name }}" class="team-member-image">
+          {% else %}
+            <div class="team-member-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
+          {% endif %}
+          
+          {# Member Info #}
+          <div class="team-member-info">
+            <h3 class="member-name">{{ member.name }}</h3>
+            <p class="member-role">{{ member.role }}</p>
+            
+            {% if member.bio %}
+              <p class="member-bio">{{ member.bio }}</p>
+            {% endif %}
+            
+            {# Social Links #}
+            {% if member.social_links %}
+              <div class="member-social">
+                {% if member.social_links.linkedin %}
+                  <a href="{{ member.social_links.linkedin }}" target="_blank" rel="noopener" class="social-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                {% endif %}
+                
+                {% if member.social_links.github %}
+                  <a href="{{ member.social_links. github }}" target="_blank" rel="noopener" class="social-icon">
+                    <i class="fab fa-github"></i>
+                  </a>
+                {% endif %}
+                
+                {% if member.social_links. twitter %}
+                  <a href="{{ member.social_links.twitter }}" target="_blank" rel="noopener" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                {% endif %}
+                
+                {% if member.social_links.email %}
+                  <a href="mailto:{{ member.social_links.email }}" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+          
+        </div>
+      {% endfor %}
+    </div>
+    
+  </div>
+</section>
+
+<style>
+.team-section {
+  background: #f8f9fa;
+}
+
+.team-grid {
+  margin-top: 3rem;
+}
+
+.team-member-card {
+  text-align: center;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.team-member-image {
+  width: 180px;
+  height: 180px;
+  border-radius:  50%;
+  object-fit: cover;
+  margin:  0 auto 1.5rem;
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #e9ecef;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #adb5bd;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.member-role {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.member-bio {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.member-social {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.member-social .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e9ecef;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.member-social .social-icon:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+}
+</style>

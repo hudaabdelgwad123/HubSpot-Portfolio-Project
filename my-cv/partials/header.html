@@ -1,0 +1,55 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+<header class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="container">
+      
+      <a href="/" class="logo" aria-label="Home" itemprop="url">
+        <span itemprop="name">{{ site_settings.company_name|default("Portfolio") }}</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" 
+              id="mobileMenuToggle" 
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="navMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu" role="menubar">
+        <li role="none">
+          <a href="#home" class="nav-link" role="menuitem">
+            <span>Home</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#about" class="nav-link" role="menuitem">
+            <span>About</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#skills" class="nav-link" role="menuitem">
+            <span>Skills</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#projects" class="nav-link" role="menuitem">
+            <span>Projects</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#contact" class="nav-link nav-cta" role="menuitem">
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+  
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</header>

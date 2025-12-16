@@ -1,0 +1,193 @@
+[ {
+  "id" : "section_title",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "About Me"
+}, {
+  "id" : "section_subtitle",
+  "name" : "section_subtitle",
+  "label" : "Section Subtitle",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get to know me better"
+}, {
+  "id" : "about_image",
+  "name" : "about_image",
+  "label" : "About Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : false,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "",
+    "alt" : null,
+    "size_type" : null,
+    "width" : null,
+    "height" : null,
+    "max_width" : null,
+    "max_height" : null,
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "about_content",
+  "name" : "about_content",
+  "label" : "About Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>I'm a passionate web developer with years of experience creating beautiful, functional websites. </p>"
+}, {
+  "id" : "cta_text",
+  "name" : "cta_text",
+  "label" : "CTA Button Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Download Resume"
+}, {
+  "id" : "cta_url",
+  "name" : "cta_url",
+  "label" : "CTA Button URL",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "#"
+}, {
+  "id" : "reverse_layout",
+  "name" : "reverse_layout",
+  "label" : "Reverse Layout (Image on Right)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "about_styles_text",
+  "name" : "about_styles_text",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "title_color",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : { "color" : "#1f2937", "opacity" : 100 }
+  }, {
+    "id" : "stat_color",
+    "name" : "stat_color",
+    "label" : "Statistics Number Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : { "color" : "#6366f1", "opacity" : 100 }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "about_styles_corner",
+  "name" : "about_styles_corner",
+  "label" : "Corner",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "image_border_radius",
+    "name" : "image_border_radius",
+    "label" : "Image Border Radius (px)",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 0,
+    "max" : 50,
+    "step" : 5,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 12
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "about_styles_border",
+  "name" : "about_styles_border",
+  "label" : "Border",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "enable_image_shadow",
+    "name" : "enable_image_shadow",
+    "label" : "Enable Image Shadow",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "stats",
+  "name" : "stats",
+  "label" : "Statistics",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "stat_number",
+    "name" : "stat_number",
+    "label" : "Number",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "100+"
+  }, {
+    "id" : "stat_label",
+    "name" : "stat_label",
+    "label" : "Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Projects Completed"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+} ]

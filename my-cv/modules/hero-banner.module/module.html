@@ -1,0 +1,83 @@
+<section class="hero-banner hero-{{ module.background_type }}" 
+  {% if module.background_type == 'image' and module.background_image.src %}
+    style="background-image: url('{{ module.background_image.src }}');"
+  {% endif %}
+  style="
+    --hero-text-color: {{ module.hero_section_styles.text_color.color|default('#1f2937') }};
+    --hero-accent-color: {{ module.hero_section_styles.accent_color.color|default('#6366f1') }};
+    --hero-button-style: '{{ module.hero_section_styles.button_style|default('solid') }}';
+    --hero-padding-y: {{ module.hero_section_styles.padding_vertical|default(80) }}px;
+    --hero-shapes-anim-enabled: {% if module.hero_section_styles.enable_shape_animation %}1{% else %}0{% endif %};
+    --hero-shapes-speed: {{ module.hero_section_styles.shape_animation_speed|default(20) }}s;
+  ">
+  
+  <div class="hero-overlay"></div>
+  <div class="hero-bg-shapes" style="animation-duration: var(--hero-shapes-speed); filter: blur(calc(var(--hero-shapes-anim-enabled) * 80px));">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <div class="hero-text-section">
+          {% if module.greeting %}
+            <p class="hero-greeting animate-fade-in">{{ module.greeting }}</p>
+          {% endif %}
+          
+          <h1 class="hero-name animate-fade-in-up">{{ module.cv_name }}</h1>
+          
+          {% if module.enable_typing_animation %}
+            <h2 class="hero-title">
+              <span class="typing-text" data-text="{{ module.title }}"><!-- --></span>
+              <span class="typing-cursor">|</span>
+            </h2>
+          {% else %}
+            <h2 class="hero-title">{{ module.title }}</h2>
+          {% endif %}
+          
+          {% if module.tagline %}
+            <p class="hero-tagline animate-fade-in">{{ module.tagline }}</p>
+          {% endif %}
+          
+          <div class="hero-buttons animate-fade-in">
+            {% if module.primary_cta_text %}
+              <a href="{{ module.primary_cta_url }}" class="btn btn-primary">
+                {{ module.primary_cta_text }}
+              </a>
+            {% endif %}
+            
+            {% if module.secondary_cta_text %}
+              <a href="{{ module.secondary_cta_url }}" class="btn btn-secondary">
+                {{ module.secondary_cta_text }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+        
+        <div class="hero-image-section">
+          {% if module.profile_image.src %}
+            <div class="hero-image-wrapper">
+              <div class="image-glow"></div>
+              <img src="{{ module.profile_image.src }}" 
+                   alt="{{ module.cv_name }}" 
+                   class="hero-profile-img">
+            </div>
+          {% endif %}
+        </div>
+        
+      </div>
+    </div>
+  </div>
+      
+      <div class="hero-scroll-indicator">
+        <a href="#about" class="scroll-down">
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</section>

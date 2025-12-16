@@ -1,0 +1,58 @@
+<section class="about-section {% if module.reverse_layout %}reverse{% endif %}" id="about"
+         style="
+           --about-title-color: {{ module.about_styles_text.title_color.color|default('#333') }};
+           --about-stat-color: {{ module.about_styles_text.stat_color.color|default('#667eea') }};
+           --about-image-radius: {{ module.about_styles_corner.image_border_radius|default(12) }}px;
+           --about-image-shadow-enabled: {% if module.about_styles_border.enable_image_shadow %}1{% else %}0{% endif %};
+         ">
+  <div class="container">
+    
+    <div class="about-wrapper">
+      
+      <div class="about-image-col">
+        {% if module.about_image.src %}
+          <div class="about-image-wrapper">
+            <img src="{{ module.about_image.src }}" 
+                 alt="{{ module.section_title }}" 
+                 class="about-image">
+            <div class="image-decoration"></div>
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="about-content-col">
+        {% if module.section_subtitle %}
+          <p class="section-label">{{ module.section_subtitle }}</p>
+        {% endif %}
+        
+        {% if module.section_title %}
+          <h2 class="section-title">{{ module.section_title }}</h2>
+        {% endif %}
+        
+        <div class="about-text">
+          {{ module.about_content }}
+        </div>
+        
+        {% if module.stats %}
+          <div class="stats-grid">
+            {% for stat in module.stats %}
+              <div class="stat-item">
+                <div class="stat-number">{{ stat.stat_number }}</div>
+                <div class="stat-label">{{ stat.stat_label }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        {% if module.cta_text %}
+          <a href="{{ module.cta_url }}" class="btn btn-primary">
+            {{ module.cta_text }}
+            <i class="fas fa-download"></i>
+          </a>
+        {% endif %}
+      </div>
+      
+    </div>
+    
+  </div>
+</section>

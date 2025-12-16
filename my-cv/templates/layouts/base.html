@@ -1,0 +1,206 @@
+<!--
+  templateType: none
+  label: Base Layout
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" dir="{{ html_dir }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{% block page_title %}{{ content. html_title }}{% endblock %}</title>
+    <meta
+      name="description"
+      content="{% block meta_description %}{{ content.meta_description }}{% endblock %}"
+    />
+    <meta
+      name="keywords"
+      content="{% block meta_keywords %}web developer, portfolio, frontend developer, full stack developer{% endblock %}"
+    />
+    <meta name="author" content="{{ site_settings.company_name }}" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href="{{ content. absolute_url }}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ content.absolute_url }}" />
+    <meta
+      property="og:title"
+      content="{% block og_title %}{{ content.html_title }}{% endblock %}"
+    />
+    <meta
+      property="og:description"
+      content="{% block og_description %}{{ content.meta_description }}{% endblock %}"
+    />
+    <meta
+      property="og: image"
+      content="{% block og_image %}{{ content.featured_image }}{% endblock %}"
+    />
+    <meta property="og:site_name" content="{{ site_settings.company_name }}" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="{{ content.absolute_url }}" />
+    <meta
+      name="twitter:title"
+      content="{% block twitter_title %}{{ content.html_title }}{% endblock %}"
+    />
+    <meta
+      name="twitter: description"
+      content="{% block twitter_description %}{{ content.meta_description }}{% endblock %}"
+    />
+    <meta
+      name="twitter:image"
+      content="{% block twitter_image %}{{ content.featured_image }}{% endblock %}"
+    />
+
+    {% if theme. favicon. src %}
+    <link rel="icon" type="image/png" href="{{ theme.favicon.src }}" />
+    {% else %}
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ get_asset_url('/my-cv/images/sections-preview/favicon-32x32.png') }}"
+    />
+    {% endif %}
+    <meta
+      name="theme-color"
+      content="{{ theme.theme_settings.primary_color.color|default('#667eea') }}"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <style>
+      :root {
+        --primary-color: {{ theme.theme_settings.primary_color.color|default('#667eea') }};
+        --secondary-color: {{ theme.theme_settings.secondary_color.color|default('#764ba2') }};
+        --text-color: {{ theme.theme_settings.text_color.color|default('#333333') }};
+        --background-color: {{ theme.theme_settings.background_color.color|default('#ffffff') }};
+      }
+      {% include "/my-cv/css/critical.css" %}
+    </style>
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="{{ get_asset_url('/my-cv/css/main.css') }}"
+      as="style"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter: wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this. media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare. com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
+
+    <link
+      rel="stylesheet"
+      href="{{ get_asset_url('/my-cv/css/main.css') }}"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="{{ get_asset_url('/my-cv/css/main.css') }}"
+      />
+    </noscript>
+
+    {{ standard_header_includes }} {% if theme.custom_css %}
+    <style>
+      {{ theme.custom_css }}
+    </style>
+    {% endif %}
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "{{ site_settings.company_name }}",
+        "url": "{{ request.domain }}",
+        "jobTitle": "{{ theme.site_tagline|default('Full Stack Developer') }}",
+        "description": "{{ content.meta_description }}"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{ site_settings.company_name }}",
+        "url": "{{ request.domain }}"
+      }
+    </script>
+
+    {% if theme.google_analytics_id %}
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{ theme.google_analytics_id }}"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "{{ theme.google_analytics_id }}");
+    </script>
+    {% endif %} {% block additional_head %}{% endblock %}
+  </head>
+
+  <body class="{% block body_class %}{% endblock %}">
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    {% include "/my-cv/partials/header.html" %}
+
+    <main id="main-content" role="main">{% block body %}{% endblock %}</main>
+
+    {% include "/my-cv/partials/footer.html" %}
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    {{ standard_footer_includes }}
+
+    <script src="{{ get_asset_url('/my-cv/js/theme.js') }}" defer></script>
+
+    {% if theme.custom_javascript %}
+    <script>
+      {
+        {
+          theme.custom_javascript;
+        }
+      }
+    </script>
+    {% endif %} {% block additional_scripts %}{% endblock %}
+  </body>
+</html>

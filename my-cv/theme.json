@@ -1,0 +1,24 @@
+{
+  "label": "Personal Portfolio CV Theme",
+  "preview_path":  "./templates/personal-portfolio.html",
+  "screenshot_path":  "./images/theme-preview.png",
+  "enable_domain_stylesheets": false,
+  "is_available_for_new_content": true,
+  "responsive_breakpoints" : [ {
+    "name" : "mobile",
+    "previewWidth" : {
+      "value" : 477,
+      "units" : "px"
+    },
+    "mediaQuery" : "@media (max-width: 767px)",
+    "messages" : { }
+  } ],
+  "version" : "1.0",
+  "author" : {
+    "name" : "The Web Plant",
+    "email" : "vikram@thewebplant.com",
+    "url" : "https://www.thewebplant.com/"
+  },
+  "documentation_url": "https://yourwebsite.com/docs",
+  "example_url":  "https://yourwebsite.com/demo"
+}
