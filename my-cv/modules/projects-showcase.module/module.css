@@ -3,7 +3,7 @@
 .projects-showcase__section {
   position: relative;
   padding: 80px 0;
-  background:  #ffffff;
+  background: #ffffff;
   overflow: hidden;
   z-index: 1;
 }
@@ -11,7 +11,7 @@
 .projects-showcase__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding:  0 20px;
+  padding: 0 20px;
 }
 
 .projects-showcase__title {
@@ -24,8 +24,8 @@
 }
 
 .projects-showcase__subtitle {
-  text-align:  center;
-  font-size:  1.1rem;
+  text-align: center;
+  font-size: 1.1rem;
   color: #666;
   margin-bottom: 3rem;
   line-height: 1.6;
@@ -88,16 +88,28 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
-  transform:  translateY(30px);
+  transform: translateY(30px);
   animation: fadeInUp 0.6s ease forwards;
 }
 
-.projects-showcase__card:nth-child(1) { animation-delay: 0.1s; }
-.projects-showcase__card:nth-child(2) { animation-delay: 0.2s; }
-.projects-showcase__card:nth-child(3) { animation-delay: 0.3s; }
-.projects-showcase__card:nth-child(4) { animation-delay: 0.4s; }
-.projects-showcase__card:nth-child(5) { animation-delay: 0.5s; }
-.projects-showcase__card:nth-child(6) { animation-delay: 0.6s; }
+.projects-showcase__card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.projects-showcase__card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.projects-showcase__card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.projects-showcase__card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.projects-showcase__card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.projects-showcase__card:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 @keyframes fadeInUp {
   to {
@@ -117,11 +129,11 @@
 }
 
 .projects-showcase__card--featured::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right:  0;
+  right: 0;
   height: 4px;
   background: linear-gradient(90deg, #667eea, #764ba2);
   z-index: 10;
@@ -132,7 +144,7 @@
   position: relative;
   width: 100%;
   padding-top: 66.67%; /* 3: 2 Aspect Ratio */
-  overflow:  hidden;
+  overflow: hidden;
   background: #f0f0f0;
 }
 
@@ -154,7 +166,7 @@
 
 /* Image Placeholder Styling */
 .projects-showcase__image-placeholder {
-  position:  absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -163,7 +175,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background:  linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
   color: #999;
   font-size: 0.95rem;
   gap: 0.75rem;
@@ -179,7 +191,7 @@
 
 .projects-showcase__image-placeholder span {
   font-weight: 600;
-  color:  #777;
+  color: #777;
 }
 
 /* Featured Badge */
@@ -194,7 +206,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-radius:  50px;
+  border-radius: 50px;
   z-index: 5;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
@@ -204,14 +216,19 @@
   position: absolute;
   top: 0;
   left: 0;
-  right:  0;
+  right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--projects-overlay-color, #667eea) 95%, transparent) 0%, color-mix(in srgb, var(--projects-overlay-color, #667eea) 60%, black) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--projects-overlay-color, #667eea) 95%, transparent)
+      0%,
+    color-mix(in srgb, var(--projects-overlay-color, #667eea) 60%, black) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition:  opacity 0.4s ease;
+  transition: opacity 0.4s ease;
   z-index: 2;
 }
 
@@ -274,7 +291,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border-radius: 50px;
-  margin-bottom:  1rem;
+  margin-bottom: 1rem;
 }
 
 .projects-showcase__project-title {
@@ -307,7 +324,7 @@
   background: #f5f5f5;
   color: #555;
   font-size: 0.85rem;
-  font-weight:  500;
+  font-weight: 500;
   border-radius: 6px;
   transition: all 0.3s ease;
 }
@@ -342,77 +359,80 @@
   .projects-showcase__grid--columns-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .projects-showcase__title {
     font-size: 2rem;
   }
 }
 
-@media (max-width:  768px) {
+@media (max-width: 768px) {
   .projects-showcase__section {
     padding: 60px 0;
   }
-  
+
   .projects-showcase__grid--columns-2,
   .projects-showcase__grid--columns-3 {
     grid-template-columns: 1fr;
   }
-  
+
   .projects-showcase__title {
     font-size: 1.8rem;
   }
-  
+
   .projects-showcase__subtitle {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
-  
+
   .projects-showcase__filter-btn {
     gap: 0.5rem;
     background: #f5f5f5;
     border: 2px solid transparent;
   }
-  
+
   .projects-showcase__link-text {
     display: none;
   }
 
   /* Filter style variants */
-  .projects-showcase__section[style*="--projects-filter-style: 'outline'"] .projects-showcase__filter-btn--active {
+  .projects-showcase__section[style*="--projects-filter-style: 'outline'"]
+    .projects-showcase__filter-btn--active {
     border-color: var(--projects-tag-bg, #667eea);
     color: var(--projects-tag-bg, #667eea);
     background: transparent;
   }
 
-  .projects-showcase__section[style*="--projects-filter-style: 'solid'"] .projects-showcase__filter-btn--active {
+  .projects-showcase__section[style*="--projects-filter-style: 'solid'"]
+    .projects-showcase__filter-btn--active {
     background: var(--projects-tag-bg, #667eea);
     color: white;
   }
 
-  .projects-showcase__section[style*="--projects-filter-style: 'underline'"] .projects-showcase__filter-btn--active {
+  .projects-showcase__section[style*="--projects-filter-style: 'underline'"]
+    .projects-showcase__filter-btn--active {
     background: transparent;
     color: var(--projects-tag-bg, #667eea);
     border-bottom: 3px solid var(--projects-tag-bg, #667eea);
     border-radius: 0;
   }
-  
+
   .projects-showcase__link-btn {
     padding: 0.75rem;
     width: 50px;
     height: 50px;
     justify-content: center;
   }
-  
+
   .projects-showcase__project-title {
     font-size: 1.25rem;
   }
-  
+
   .projects-showcase__content {
     padding: 1.5rem;
   }
 }
 
-@media (max-width:  480px) {
+@media (max-width: 480px) {
   .projects-showcase__container {
     padding: 0 15px;
   }
@@ -421,15 +441,15 @@
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
   }
-  
+
   .projects-showcase__card {
     border-radius: 12px;
   }
-  
+
   .projects-showcase__content {
     padding: 1.25rem;
   }
-  
+
   .projects-showcase__badge {
     font-size: 0.7rem;
     padding: 0.4rem 0.8rem;

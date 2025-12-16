@@ -1,205 +1,231 @@
-[ {
-  "id" : "section_title",
-  "name" : "section_title",
-  "label" : "Section Title",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Get In Touch"
-}, {
-  "id" : "section_subtitle",
-  "name" : "section_subtitle",
-  "label" : "Section Subtitle",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Have a project in mind? Let's work together!"
-}, {
-  "id" : "email",
-  "name" : "email",
-  "label" : "Your Email Address",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "your.email@example.com"
-}, {
-  "id" : "phone",
-  "name" : "phone",
-  "label" : "Phone Number",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "+1 (555) 123-4567"
-}, {
-  "id" : "location",
-  "name" : "location",
-  "label" : "Location",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "New York, NY"
-}, {
-  "id" : "linkedin_url",
-  "name" : "linkedin_url",
-  "label" : "LinkedIn URL",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : ""
-}, {
-  "id" : "github_url",
-  "name" : "github_url",
-  "label" : "GitHub URL",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : ""
-}, {
-  "id" : "twitter_url",
-  "name" : "twitter_url",
-  "label" : "Twitter URL",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : ""
-}, {
-  "id" : "show_contact_form",
-  "name" : "show_contact_form",
-  "label" : "Show Contact Form",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : true
-}, {
-  "id" : "contact_styles_background",
-  "name" : "contact_styles_background",
-  "label" : "Background",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "background_color",
-    "name" : "background_color",
-    "label" : "Section Background Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#f3f4f6", "opacity" : 100 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "contact_styles_card",
-  "name" : "contact_styles_card",
-  "label" : "Card",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "card_background_color",
-    "name" : "card_background_color",
-    "label" : "Card Background Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#ffffff", "opacity" : 95 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "contact_styles_text",
-  "name" : "contact_styles_text",
-  "label" : "Text & Accent",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "accent_color",
-    "name" : "accent_color",
-    "label" : "Accent Color (buttons, links)",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#6366f1", "opacity" : 100 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "contact_styles_inputs",
-  "name" : "contact_styles_inputs",
-  "label" : "Inputs",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "input_background_color",
-    "name" : "input_background_color",
-    "label" : "Input Background Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#f9fafb", "opacity" : 100 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "contact_styles_effects",
-  "name" : "contact_styles_effects",
-  "label" : "Effects",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "enable_glassmorphism",
-    "name" : "enable_glassmorphism",
-    "label" : "Enable Glassmorphism Effect",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  }, {
-    "id" : "blur_amount",
-    "name" : "blur_amount",
-    "label" : "Blur Amount (px)",
-    "required" : false,
-    "locked" : false,
-    "display" : "text",
-    "min" : 5,
-    "max" : 30,
-    "step" : 1,
-    "type" : "number",
-    "display_width" : null,
-    "default" : 10
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-} ]
+[
+  {
+    "id": "section_title",
+    "name": "section_title",
+    "label": "Section Title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Get In Touch"
+  },
+  {
+    "id": "section_subtitle",
+    "name": "section_subtitle",
+    "label": "Section Subtitle",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Have a project in mind? Let's work together!"
+  },
+  {
+    "id": "email",
+    "name": "email",
+    "label": "Your Email Address",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "your.email@example.com"
+  },
+  {
+    "id": "phone",
+    "name": "phone",
+    "label": "Phone Number",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "+1 (555) 123-4567"
+  },
+  {
+    "id": "location",
+    "name": "location",
+    "label": "Location",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "New York, NY"
+  },
+  {
+    "id": "linkedin_url",
+    "name": "linkedin_url",
+    "label": "LinkedIn URL",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+  },
+  {
+    "id": "github_url",
+    "name": "github_url",
+    "label": "GitHub URL",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+  },
+  {
+    "id": "twitter_url",
+    "name": "twitter_url",
+    "label": "Twitter URL",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+  },
+  {
+    "id": "show_contact_form",
+    "name": "show_contact_form",
+    "label": "Show Contact Form",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": true
+  },
+  {
+    "id": "contact_styles_background",
+    "name": "contact_styles_background",
+    "label": "Background",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "background_color",
+        "name": "background_color",
+        "label": "Section Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#f3f4f6", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "contact_styles_card",
+    "name": "contact_styles_card",
+    "label": "Card",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "card_background_color",
+        "name": "card_background_color",
+        "label": "Card Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#ffffff", "opacity": 95 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "contact_styles_text",
+    "name": "contact_styles_text",
+    "label": "Text & Accent",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "accent_color",
+        "name": "accent_color",
+        "label": "Accent Color (buttons, links)",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#6366f1", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "contact_styles_inputs",
+    "name": "contact_styles_inputs",
+    "label": "Inputs",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "input_background_color",
+        "name": "input_background_color",
+        "label": "Input Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#f9fafb", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "contact_styles_effects",
+    "name": "contact_styles_effects",
+    "label": "Effects",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "enable_glassmorphism",
+        "name": "enable_glassmorphism",
+        "label": "Enable Glassmorphism Effect",
+        "required": false,
+        "locked": false,
+        "display": "checkbox",
+        "type": "boolean",
+        "display_width": null,
+        "default": true
+      },
+      {
+        "id": "blur_amount",
+        "name": "blur_amount",
+        "label": "Blur Amount (px)",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "min": 5,
+        "max": 30,
+        "step": 1,
+        "type": "number",
+        "display_width": null,
+        "default": 10
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  }
+]

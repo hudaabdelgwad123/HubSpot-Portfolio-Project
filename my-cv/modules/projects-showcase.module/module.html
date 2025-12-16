@@ -1,118 +1,125 @@
-<section class="projects-showcase__section" id="projects"
-         style="
+<section
+  class="projects-showcase__section"
+  id="projects"
+  style="
            --projects-card-bg: {{ module.projects_section_styles.card_background_color.color|default('#ffffff') }};
            --projects-overlay-color: {{ module.projects_section_styles.overlay_color.color|default('#667eea') }};
            --projects-image-scale: {{ module.projects_section_styles.image_hover_scale|default(110) }}%;
            --projects-tag-bg: {{ module.projects_section_styles.tag_background_color.color|default('#ec4899') }};
            --projects-filter-style: '{{ module.projects_section_styles.filter_button_style|default('outline') }}';
-         ">
+         "
+>
   <div class="projects-showcase__container">
-    
     {% if module.section_title %}
-      <h2 class="projects-showcase__title">{{ module.section_title }}</h2>
-    {% endif %}
-    
-    {% if module.section_subtitle %}
-      <p class="projects-showcase__subtitle">{{ module.section_subtitle }}</p>
-    {% endif %}
-    
-    {% if module.show_filters %}
-      <div class="projects-showcase__filters" data-filter-group>
-        <button class="projects-showcase__filter-btn projects-showcase__filter-btn--active" data-filter="all">
-          All Projects
-        </button>
-        {% set categories = [] %}
-        {% for project in module.projects %}
-          {% if project.project_category and project.project_category not in categories %}
-            {% do categories.append(project.project_category) %}
-          {% endif %}
-        {% endfor %}
-        {% for category in categories %}
-          <button class="projects-showcase__filter-btn" data-filter="{{ category|lower|replace(' ', '-') }}">
-            {{ category }}
-          </button>
-        {% endfor %}
-      </div>
-    {% endif %}
-    
-    <div class="projects-showcase__grid projects-showcase__grid--{{ module.layout_style }} projects-showcase__grid--columns-{{ module.columns }}">
-      {% for project in module.projects %}
-        <div class="projects-showcase__card{% if project.featured %} projects-showcase__card--featured{% endif %}" 
-             data-category="{{ project.project_category|lower|replace(' ', '-') }}"
-             data-project-index="{{ loop.index0 }}">
-          
-          <div class="projects-showcase__image-wrapper">
-            {% set has_image = project.project_image.src and project.project_image.src != "" %}
-            
-            {% if has_image %}
-              <img src="{{ project.project_image.src }}" 
-                   alt="{{ project.project_image.alt|default(project. project_title) }}" 
-                   class="projects-showcase__image"
-                   {% if loop.index > 3 %}loading="lazy"{% endif %}>
-            {% else %}
-              <div class="projects-showcase__image-placeholder">
-                <i class="fas fa-image"></i>
-                <span>Upload Project Image</span>
-              </div>
-            {% endif %}
-            
-            {% if project.featured %}
-              <span class="projects-showcase__badge">Featured</span>
-            {% endif %}
-            
-            {% if has_image %}
-              <div class="projects-showcase__overlay">
-                <div class="projects-showcase__links">
-                  {% if project.project_link %}
-                    <a href="{{ project.project_link }}" 
-                       class="projects-showcase__link-btn" 
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View {{ project.project_title }} live project">
-                      <i class="fas fa-external-link-alt"></i>
-                      <span class="projects-showcase__link-text">Live Demo</span>
-                    </a>
-                  {% endif %}
-                  
-                  {% if project.github_link %}
-                    <a href="{{ project.github_link }}" 
-                       class="projects-showcase__link-btn" 
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View {{ project.project_title }} source code">
-                      <i class="fab fa-github"></i>
-                      <span class="projects-showcase__link-text">View Code</span>
-                    </a>
-                  {% endif %}
-                </div>
-              </div>
-            {% endif %}
-          </div>
-          
-          <div class="projects-showcase__content">
-            {% if project.project_category %}
-              <span class="projects-showcase__category">{{ project.project_category }}</span>
-            {% endif %}
-            
-            <h3 class="projects-showcase__project-title">{{ project.project_title }}</h3>
-            
-            {% if project.project_description %}
-              <p class="projects-showcase__description">{{ project.project_description }}</p>
-            {% endif %}
-            
-            {% if project.project_technologies %}
-              <div class="projects-showcase__technologies">
-                {% set tech_list = project.project_technologies|split(',') %}
-                {% for tech in tech_list %}
-                  <span class="projects-showcase__tech-tag">{{ tech|trim }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
-          </div>
-          
-        </div>
+    <h2 class="projects-showcase__title">{{ module.section_title }}</h2>
+    {% endif %} {% if module.section_subtitle %}
+    <p class="projects-showcase__subtitle">{{ module.section_subtitle }}</p>
+    {% endif %} {% if module.show_filters %}
+    <div class="projects-showcase__filters" data-filter-group>
+      <button
+        class="projects-showcase__filter-btn projects-showcase__filter-btn--active"
+        data-filter="all"
+      >
+        All Projects
+      </button>
+      {% set categories = [] %} {% for project in module.projects %} {% if
+      project.project_category and project.project_category not in categories %}
+      {% do categories.append(project.project_category) %} {% endif %} {% endfor
+      %} {% for category in categories %}
+      <button
+        class="projects-showcase__filter-btn"
+        data-filter="{{ category|lower|replace(' ', '-') }}"
+      >
+        {{ category }}
+      </button>
       {% endfor %}
     </div>
-    
+    {% endif %}
+
+    <div
+      class="projects-showcase__grid projects-showcase__grid--{{ module.layout_style }} projects-showcase__grid--columns-{{ module.columns }}"
+    >
+      {% for project in module.projects %}
+      <div
+        class="projects-showcase__card{% if project.featured %} projects-showcase__card--featured{% endif %}"
+        data-category="{{ project.project_category|lower|replace(' ', '-') }}"
+        data-project-index="{{ loop.index0 }}"
+      >
+        <div class="projects-showcase__image-wrapper">
+          {% set has_image = project.project_image.src and
+          project.project_image.src != "" %} {% if has_image %}
+          <img
+            src="{{ project.project_image.src }}"
+            alt="{{ project.project_image.alt|default(project. project_title) }}"
+            class="projects-showcase__image"
+            {%
+            if
+            loop.index
+          />
+          3 %}loading="lazy"{% endif %}> {% else %}
+          <div class="projects-showcase__image-placeholder">
+            <i class="fas fa-image"></i>
+            <span>Upload Project Image</span>
+          </div>
+          {% endif %} {% if project.featured %}
+          <span class="projects-showcase__badge">Featured</span>
+          {% endif %} {% if has_image %}
+          <div class="projects-showcase__overlay">
+            <div class="projects-showcase__links">
+              {% if project.project_link %}
+              <a
+                href="{{ project.project_link }}"
+                class="projects-showcase__link-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View {{ project.project_title }} live project"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                <span class="projects-showcase__link-text">Live Demo</span>
+              </a>
+              {% endif %} {% if project.github_link %}
+              <a
+                href="{{ project.github_link }}"
+                class="projects-showcase__link-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View {{ project.project_title }} source code"
+              >
+                <i class="fab fa-github"></i>
+                <span class="projects-showcase__link-text">View Code</span>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="projects-showcase__content">
+          {% if project.project_category %}
+          <span class="projects-showcase__category"
+            >{{ project.project_category }}</span
+          >
+          {% endif %}
+
+          <h3 class="projects-showcase__project-title">
+            {{ project.project_title }}
+          </h3>
+
+          {% if project.project_description %}
+          <p class="projects-showcase__description">
+            {{ project.project_description }}
+          </p>
+          {% endif %} {% if project.project_technologies %}
+          <div class="projects-showcase__technologies">
+            {% set tech_list = project.project_technologies|split(',') %} {% for
+            tech in tech_list %}
+            <span class="projects-showcase__tech-tag">{{ tech|trim }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>

@@ -1,48 +1,53 @@
-<section class="skills-grid__section" id="skills"
-         style="
+<section
+  class="skills-grid__section"
+  id="skills"
+  style="
            --skills-card-bg: {{ module.skills_section_styles.card_background_color.color|default('#ffffff') }};
            --skills-progress-color: {{ module.skills_section_styles.progress_bar_color.color|default('#6366f1') }};
            --skills-card-radius: {{ module.skills_section_styles.card_border_radius|default(12) }}px;
            --skills-card-shadow-enabled: {% if module.skills_section_styles.enable_card_shadow %}1{% else %}0{% endif %};
            --skills-hover-effect: '{{ module.skills_section_styles.hover_effect|default('lift') }}';
-         ">
+         "
+>
   <div class="skills-grid__container">
-    
     {% if module.section_title %}
-      <h2 class="skills-grid__title">{{ module. section_title }}</h2>
+    <h2 class="skills-grid__title">{{ module. section_title }}</h2>
+    {% endif %} {% if module.section_subtitle %}
+    <p class="skills-grid__subtitle">{{ module.section_subtitle }}</p>
     {% endif %}
-    
-    {% if module.section_subtitle %}
-      <p class="skills-grid__subtitle">{{ module.section_subtitle }}</p>
-    {% endif %}
-    
-    <div class="skills-grid__grid skills-grid__grid--columns-{{ module.columns }}">
+
+    <div
+      class="skills-grid__grid skills-grid__grid--columns-{{ module.columns }}"
+    >
       {% for skill in module.skills %}
-        <div class="skills-grid__card" data-skill-index="{{ loop.index0 }}">
-          
-          <div class="skills-grid__icon" style="color: {{ skill.icon_color.color }};">
-            <i class="fas {{ skill.skill_icon }}"></i>
-          </div>
-          
-          <h3 class="skills-grid__name">{{ skill.skill_name }}</h3>
-          
-          <p class="skills-grid__description">{{ skill.skill_description }}</p>
-          
-          {% if module.show_progress_bars %}
-            <div class="skills-grid__progress">
-              <div class="skills-grid__progress-bar">
-                <div class="skills-grid__progress-fill" 
-                     data-progress="{{ skill.skill_level }}"
-                     style="background: var(--skills-progress-color);">
-                </div>
-              </div>
-              <span class="skills-grid__progress-label">{{ skill.skill_level }}%</span>
-            </div>
-          {% endif %}
-          
+      <div class="skills-grid__card" data-skill-index="{{ loop.index0 }}">
+        <div
+          class="skills-grid__icon"
+          style="color: {{ skill.icon_color.color }};"
+        >
+          <i class="fas {{ skill.skill_icon }}"></i>
         </div>
+
+        <h3 class="skills-grid__name">{{ skill.skill_name }}</h3>
+
+        <p class="skills-grid__description">{{ skill.skill_description }}</p>
+
+        {% if module.show_progress_bars %}
+        <div class="skills-grid__progress">
+          <div class="skills-grid__progress-bar">
+            <div
+              class="skills-grid__progress-fill"
+              data-progress="{{ skill.skill_level }}"
+              style="background: var(--skills-progress-color)"
+            ></div>
+          </div>
+          <span class="skills-grid__progress-label"
+            >{{ skill.skill_level }}%</span
+          >
+        </div>
+        {% endif %}
+      </div>
       {% endfor %}
     </div>
-    
   </div>
 </section>

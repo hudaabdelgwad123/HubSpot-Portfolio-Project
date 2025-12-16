@@ -10,9 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.toggle("active");
       const isExpanded = this.getAttribute("aria-expanded") === "true";
       this.setAttribute("aria-expanded", !isExpanded);
-      
+
       // Prevent body scroll when menu is open
-      document.body.style.overflow = this.classList.contains("active") ? "hidden" : "";
+      document.body.style.overflow = this.classList.contains("active")
+        ? "hidden"
+        : "";
     });
 
     // Close menu when clicking on a nav link
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.overflow = "";
       });
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener("click", function (e) {
       if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
@@ -43,8 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const scrollProgress = document.getElementById("scrollProgress");
   if (scrollProgress) {
     window.addEventListener("scroll", function () {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
       const scrollPercentage = (scrollTop / scrollHeight) * 100;
       scrollProgress.style.width = scrollPercentage + "%";
     });
@@ -97,11 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (target) {
           const headerOffset = 80;
           const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - headerOffset;
 
           window.scrollTo({
             top: offsetPosition,
-            behavior: "smooth"
+            behavior: "smooth",
           });
         }
       }
@@ -109,30 +115,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ==================== ANIMATE ON SCROLL ====================
-  const animateElements = document.querySelectorAll('.animate-on-scroll');
-  
+  const animateElements = document.querySelectorAll(".animate-on-scroll");
+
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: "0px 0px -50px 0px",
   };
 
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add("visible");
       }
     });
   }, observerOptions);
 
-  animateElements.forEach(element => {
+  animateElements.forEach((element) => {
     observer.observe(element);
   });
 
   // ==================== PAGE LOAD ANIMATION ====================
-  window.addEventListener('load', function() {
-    document.body.classList.remove('loading');
+  window.addEventListener("load", function () {
+    document.body.classList.remove("loading");
   });
 
-  console.log('🎨 Modern Portfolio Theme Loaded');
+  console.log("🎨 Modern Portfolio Theme Loaded");
 });
-

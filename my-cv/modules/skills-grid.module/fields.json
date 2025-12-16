@@ -1,264 +1,304 @@
-[ {
-  "id" : "section_title",
-  "name" : "section_title",
-  "label" : "Section Title",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Skills & Expertise"
-}, {
-  "id" : "section_subtitle",
-  "name" : "section_subtitle",
-  "label" : "Section Subtitle",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Technologies I work with"
-}, {
-  "id" : "skills",
-  "name" : "skills",
-  "label" : "Skills",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : 12,
-    "sorting_label_field" : null,
-    "default" : 4
+[
+  {
+    "id": "section_title",
+    "name": "section_title",
+    "label": "Section Title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Skills & Expertise"
   },
-  "children" : [ {
-    "id" : "skill_icon",
-    "name" : "skill_icon",
-    "label" : "Icon (Font Awesome class)",
-    "help_text" : "e.g., fa-code, fa-server, fa-paint-brush",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "fa-code"
-  }, {
-    "id" : "skill_name",
-    "name" : "skill_name",
-    "label" : "Skill Name",
-    "required" : true,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Frontend Development"
-  }, {
-    "id" : "skill_description",
-    "name" : "skill_description",
-    "label" : "Description",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "HTML, CSS, JavaScript, React"
-  }, {
-    "id" : "skill_level",
-    "name" : "skill_level",
-    "label" : "Proficiency Level (%)",
-    "required" : false,
-    "locked" : false,
-    "display" : "text",
-    "min" : 0,
-    "max" : 100,
-    "step" : 1,
-    "type" : "number",
-    "display_width" : null,
-    "default" : 90
-  }, {
-    "id" : "icon_color",
-    "name" : "icon_color",
-    "label" : "Icon Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : {
-      "color" : "#667eea",
-      "opacity" : 100
-    }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "skill_icon" : "fa-code",
-    "skill_name" : "Frontend Development",
-    "skill_description" : "HTML, CSS, JavaScript, React",
-    "skill_level" : 90,
-    "icon_color" : {
-      "color" : "#667eea",
-      "opacity" : 100
-    }
-  }, {
-    "skill_icon" : "fa-code",
-    "skill_name" : "Frontend Development",
-    "skill_description" : "HTML, CSS, JavaScript, React",
-    "skill_level" : 90,
-    "icon_color" : {
-      "color" : "#667eea",
-      "opacity" : 100
-    }
-  }, {
-    "skill_icon" : "fa-code",
-    "skill_name" : "Frontend Development",
-    "skill_description" : "HTML, CSS, JavaScript, React",
-    "skill_level" : 90,
-    "icon_color" : {
-      "color" : "#667eea",
-      "opacity" : 100
-    }
-  }, {
-    "skill_icon" : "fa-code",
-    "skill_name" : "Frontend Development",
-    "skill_description" : "HTML, CSS, JavaScript, React",
-    "skill_level" : 90,
-    "icon_color" : {
-      "color" : "#667eea",
-      "opacity" : 100
-    }
-  } ]
-}, {
-  "id" : "show_progress_bars",
-  "name" : "show_progress_bars",
-  "label" : "Show Progress Bars",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : true
-}, {
-  "id" : "columns",
-  "name" : "columns",
-  "label" : "Number of Columns",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "2", "2 Columns" ], [ "3", "3 Columns" ], [ "4", "4 Columns" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "2"
-}, {
-  "id" : "skills_styles_background",
-  "name" : "skills_styles_background",
-  "label" : "Background",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "card_background_color",
-    "name" : "card_background_color",
-    "label" : "Card Background Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#ffffff", "opacity" : 100 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "skills_styles_text",
-  "name" : "skills_styles_text",
-  "label" : "Text",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "progress_bar_color",
-    "name" : "progress_bar_color",
-    "label" : "Progress Bar Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#6366f1", "opacity" : 100 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "skills_styles_corner",
-  "name" : "skills_styles_corner",
-  "label" : "Corner",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "card_border_radius",
-    "name" : "card_border_radius",
-    "label" : "Card Border Radius (px)",
-    "required" : false,
-    "locked" : false,
-    "display" : "text",
-    "min" : 0,
-    "max" : 30,
-    "step" : 2,
-    "type" : "number",
-    "display_width" : null,
-    "default" : 12
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "skills_styles_border",
-  "name" : "skills_styles_border",
-  "label" : "Border",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "enable_card_shadow",
-    "name" : "enable_card_shadow",
-    "label" : "Enable Card Shadow",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : true
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "skills_styles_hover",
-  "name" : "skills_styles_hover",
-  "label" : "Hover",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "hover_effect",
-    "name" : "hover_effect",
-    "label" : "Hover Effect",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "lift", "Lift" ], [ "scale", "Scale" ], [ "glow", "Glow" ] ],
-    "multiple" : false,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "lift"
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-} ]
+  {
+    "id": "section_subtitle",
+    "name": "section_subtitle",
+    "label": "Section Subtitle",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Technologies I work with"
+  },
+  {
+    "id": "skills",
+    "name": "skills",
+    "label": "Skills",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "sorting_label_field": null,
+      "default": 4
+    },
+    "children": [
+      {
+        "id": "skill_icon",
+        "name": "skill_icon",
+        "label": "Icon (Font Awesome class)",
+        "help_text": "e.g., fa-code, fa-server, fa-paint-brush",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "fa-code"
+      },
+      {
+        "id": "skill_name",
+        "name": "skill_name",
+        "label": "Skill Name",
+        "required": true,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Frontend Development"
+      },
+      {
+        "id": "skill_description",
+        "name": "skill_description",
+        "label": "Description",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "HTML, CSS, JavaScript, React"
+      },
+      {
+        "id": "skill_level",
+        "name": "skill_level",
+        "label": "Proficiency Level (%)",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "type": "number",
+        "display_width": null,
+        "default": 90
+      },
+      {
+        "id": "icon_color",
+        "name": "icon_color",
+        "label": "Icon Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#667eea",
+          "opacity": 100
+        }
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "skill_icon": "fa-code",
+        "skill_name": "Frontend Development",
+        "skill_description": "HTML, CSS, JavaScript, React",
+        "skill_level": 90,
+        "icon_color": {
+          "color": "#667eea",
+          "opacity": 100
+        }
+      },
+      {
+        "skill_icon": "fa-code",
+        "skill_name": "Frontend Development",
+        "skill_description": "HTML, CSS, JavaScript, React",
+        "skill_level": 90,
+        "icon_color": {
+          "color": "#667eea",
+          "opacity": 100
+        }
+      },
+      {
+        "skill_icon": "fa-code",
+        "skill_name": "Frontend Development",
+        "skill_description": "HTML, CSS, JavaScript, React",
+        "skill_level": 90,
+        "icon_color": {
+          "color": "#667eea",
+          "opacity": 100
+        }
+      },
+      {
+        "skill_icon": "fa-code",
+        "skill_name": "Frontend Development",
+        "skill_description": "HTML, CSS, JavaScript, React",
+        "skill_level": 90,
+        "icon_color": {
+          "color": "#667eea",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "id": "show_progress_bars",
+    "name": "show_progress_bars",
+    "label": "Show Progress Bars",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": true
+  },
+  {
+    "id": "columns",
+    "name": "columns",
+    "label": "Number of Columns",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      ["2", "2 Columns"],
+      ["3", "3 Columns"],
+      ["4", "4 Columns"]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "2"
+  },
+  {
+    "id": "skills_styles_background",
+    "name": "skills_styles_background",
+    "label": "Background",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "card_background_color",
+        "name": "card_background_color",
+        "label": "Card Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#ffffff", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "skills_styles_text",
+    "name": "skills_styles_text",
+    "label": "Text",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "progress_bar_color",
+        "name": "progress_bar_color",
+        "label": "Progress Bar Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#6366f1", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "skills_styles_corner",
+    "name": "skills_styles_corner",
+    "label": "Corner",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "card_border_radius",
+        "name": "card_border_radius",
+        "label": "Card Border Radius (px)",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "min": 0,
+        "max": 30,
+        "step": 2,
+        "type": "number",
+        "display_width": null,
+        "default": 12
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "skills_styles_border",
+    "name": "skills_styles_border",
+    "label": "Border",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "enable_card_shadow",
+        "name": "enable_card_shadow",
+        "label": "Enable Card Shadow",
+        "required": false,
+        "locked": false,
+        "display": "checkbox",
+        "type": "boolean",
+        "display_width": null,
+        "default": true
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "skills_styles_hover",
+    "name": "skills_styles_hover",
+    "label": "Hover",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "hover_effect",
+        "name": "hover_effect",
+        "label": "Hover Effect",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["lift", "Lift"],
+          ["scale", "Scale"],
+          ["glow", "Glow"]
+        ],
+        "multiple": false,
+        "type": "choice",
+        "display_width": null,
+        "default": "lift"
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  }
+]

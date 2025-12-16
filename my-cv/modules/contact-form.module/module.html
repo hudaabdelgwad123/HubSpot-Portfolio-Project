@@ -1,12 +1,15 @@
-<section class="contact-section" id="contact"
-         style="
+<section
+  class="contact-section"
+  id="contact"
+  style="
            --contact-bg: {{ module.contact_styles_background.background_color.color|default('#f3f4f6') }};
            --contact-card-bg: {{ module.contact_styles_card.card_background_color.color|default('#ffffff') }};
            --contact-accent: {{ module.contact_styles_text.accent_color.color|default('#6366f1') }};
            --contact-input-bg: {{ module.contact_styles_inputs.input_background_color.color|default('#f9fafb') }};
            --contact-glass-enabled: {% if module.contact_styles_effects.enable_glassmorphism %}1{% else %}0{% endif %};
            --contact-blur: {{ module.contact_styles_effects.blur_amount|default(10) }}px;
-         ">
+         "
+>
   <div class="container">
     <div class="contact-header">
       {% if module.section_title %}

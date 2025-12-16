@@ -1,9 +1,12 @@
 .contact-section {
   padding: 80px 50px;
-  background: linear-gradient(135deg, var(--contact-bg, #667eea) 0%, color-mix(in srgb, var(--contact-bg, #667eea) 80%, black) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--contact-bg, #667eea) 0%,
+    color-mix(in srgb, var(--contact-bg, #667eea) 80%, black) 100%
+  );
   color: white;
 }
-
 
 /* Ensure header sits on top and content below in this section */
 .contact-section .container {
@@ -13,8 +16,6 @@
   justify-content: flex-start;
   gap: 3rem;
 }
-
-
 
 .contact-header {
   text-align: center;
@@ -36,12 +37,16 @@
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 4rem;
-  align-items:  start;
+  align-items: start;
   justify-content: center;
 }
 
 .contact-info {
-  background: color-mix(in srgb, var(--contact-card-bg, #ffffff) calc(var(--contact-glass-enabled, 1) * 15%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--contact-card-bg, #ffffff) calc(var(--contact-glass-enabled, 1) * 15%),
+    transparent
+  );
   padding: 2.5rem;
   border-radius: 12px;
   backdrop-filter: blur(var(--contact-blur, 10px));
@@ -49,7 +54,7 @@
 
 .contact-info-title {
   font-size: 1.5rem;
-  margin-bottom:  2rem;
+  margin-bottom: 2rem;
   color: white;
 }
 
@@ -60,7 +65,7 @@
 }
 
 .contact-info-item {
-  display:  flex;
+  display: flex;
   gap: 1.5rem;
   align-items: flex-start;
 }
@@ -87,7 +92,7 @@
 .contact-details p {
   color: white;
   text-decoration: none;
-  font-size: 1. 1rem;
+  font-size: 1 1rem;
   transition: opacity 0.3s;
 }
 
@@ -137,8 +142,8 @@
 }
 
 .form-group {
-  display:  flex;
-  flex-direction:  column;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
@@ -161,8 +166,8 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline:  none;
-  border-color:  var(--contact-accent, #667eea);
+  outline: none;
+  border-color: var(--contact-accent, #667eea);
 }
 
 .form-group textarea {
@@ -171,12 +176,16 @@
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, var(--contact-accent, #667eea) 0%, color-mix(in srgb, var(--contact-accent, #667eea) 60%, black) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--contact-accent, #667eea) 0%,
+    color-mix(in srgb, var(--contact-accent, #667eea) 60%, black) 100%
+  );
   color: white;
   padding: 15px 40px;
   border: none;
   border-radius: 50px;
-  font-size:  1.1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -225,17 +234,17 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .contact-content {
-    grid-template-columns:  1fr;
+    grid-template-columns: 1fr;
     gap: 3rem;
   }
 }
 
-@media (max-width:  768px) {
+@media (max-width: 768px) {
   .contact-info,
   .contact-form-wrapper {
     padding: 2rem;
   }
-  
+
   .contact-section .section-title {
     font-size: 2rem;
   }

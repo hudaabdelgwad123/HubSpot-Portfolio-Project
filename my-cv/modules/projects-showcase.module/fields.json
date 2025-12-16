@@ -1,377 +1,437 @@
-[ {
-  "id" : "section_title",
-  "name" : "section_title",
-  "label" : "Section Title",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Featured Projects"
-}, {
-  "id" : "section_subtitle",
-  "name" : "section_subtitle",
-  "label" : "Section Subtitle",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Here are some of my recent works"
-}, {
-  "id" : "layout_style",
-  "name" : "layout_style",
-  "label" : "Layout Style",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "grid", "Grid Layout" ], [ "masonry", "Masonry Layout" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "grid"
-}, {
-  "id" : "columns",
-  "name" : "columns",
-  "label" : "Number of Columns",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "2", "2 Columns" ], [ "3", "3 Columns" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "3"
-}, {
-  "id" : "show_filters",
-  "name" : "show_filters",
-  "label" : "Show Category Filters",
-  "help_text" : "Enable category filtering for projects",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "projects",
-  "name" : "projects",
-  "label" : "Projects",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : 50,
-    "sorting_label_field" : null,
-    "default" : 6
+[
+  {
+    "id": "section_title",
+    "name": "section_title",
+    "label": "Section Title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Featured Projects"
   },
-  "children" : [ {
-    "id" : "project_image",
-    "name" : "project_image",
-    "label" : "Project Image",
-    "help_text" : "Recommended size: 1200x800px",
-    "required" : true,
-    "locked" : false,
-    "responsive" : false,
-    "resizable" : true,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "src" : "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
-      "alt" : "brueghel",
-      "size_type" : "exact",
-      "width" : 277,
-      "height" : 182,
-      "loading" : "lazy"
-    }
-  }, {
-    "id" : "project_title",
-    "name" : "project_title",
-    "label" : "Project Title",
-    "required" : true,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Project Name"
-  }, {
-    "id" : "project_category",
-    "name" : "project_category",
-    "label" : "Project Category",
-    "help_text" : "e.g., Web Development, Mobile App, UI/UX Design",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Web Development"
-  }, {
-    "id" : "project_description",
-    "name" : "project_description",
-    "label" : "Project Description",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "A brief description of the project and what makes it special."
-  }, {
-    "id" : "project_link",
-    "name" : "project_link",
-    "label" : "Live Project URL",
-    "help_text" : "Link to the live project",
-    "required" : false,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
-    "type" : "url",
-    "display_width" : null,
-    "default" : ""
-  }, {
-    "id" : "github_link",
-    "name" : "github_link",
-    "label" : "GitHub Repository URL",
-    "help_text" : "Link to the GitHub repository",
-    "required" : false,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
-    "type" : "url",
-    "display_width" : null,
-    "default" : ""
-  }, {
-    "id" : "project_technologies",
-    "name" : "project_technologies",
-    "label" : "Technologies Used",
-    "help_text" : "Comma-separated list of technologies",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "React, Node.js, MongoDB"
-  }, {
-    "id" : "featured",
-    "name" : "featured",
-    "label" : "Featured Project",
-    "help_text" : "Mark as a featured project",
-    "required" : false,
-    "locked" : false,
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "project_title" : "Project Name",
-    "project_category" : "Web Development",
-    "project_description" : "A brief description of the project and what makes it special.",
-    "project_image" : {
-      "src" : "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
-      "alt" : "brueghel",
-      "size_type" : "exact",
-      "width" : 277,
-      "height" : 182,
-      "loading" : "lazy"
+  {
+    "id": "section_subtitle",
+    "name": "section_subtitle",
+    "label": "Section Subtitle",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Here are some of my recent works"
+  },
+  {
+    "id": "layout_style",
+    "name": "layout_style",
+    "label": "Layout Style",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      ["grid", "Grid Layout"],
+      ["masonry", "Masonry Layout"]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "grid"
+  },
+  {
+    "id": "columns",
+    "name": "columns",
+    "label": "Number of Columns",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      ["2", "2 Columns"],
+      ["3", "3 Columns"]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "3"
+  },
+  {
+    "id": "show_filters",
+    "name": "show_filters",
+    "label": "Show Category Filters",
+    "help_text": "Enable category filtering for projects",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "projects",
+    "name": "projects",
+    "label": "Projects",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 50,
+      "sorting_label_field": null,
+      "default": 6
     },
-    "project_link" : "",
-    "github_link" : "",
-    "project_technologies" : "React, Node.js, MongoDB",
-    "featured" : false
-  }, {
-    "project_title" : "Project Name",
-    "project_category" : "Web Development",
-    "project_description" : "A brief description of the project and what makes it special.",
-    "project_image" : {
-      "src" : "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
-      "alt" : "brueghel",
-      "size_type" : "exact",
-      "width" : 277,
-      "height" : 182,
-      "loading" : "lazy"
-    },
-    "project_link" : "",
-    "github_link" : "",
-    "project_technologies" : "React, Node.js, MongoDB",
-    "featured" : false
-  }, {
-    "project_title" : "Project Name",
-    "project_category" : "Web Development",
-    "project_description" : "A brief description of the project and what makes it special.",
-    "project_image" : {
-      "src" : "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
-      "alt" : "brueghel",
-      "size_type" : "exact",
-      "width" : 277,
-      "height" : 182,
-      "loading" : "lazy"
-    },
-    "project_link" : "",
-    "github_link" : "",
-    "project_technologies" : "React, Node.js, MongoDB",
-    "featured" : false
-  }, {
-    "project_title" : "Project Name",
-    "project_category" : "Web Development",
-    "project_description" : "A brief description of the project and what makes it special.",
-    "project_image" : {
-      "src" : "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
-      "alt" : "brueghel",
-      "size_type" : "exact",
-      "width" : 277,
-      "height" : 182,
-      "loading" : "lazy"
-    },
-    "project_link" : "",
-    "github_link" : "",
-    "project_technologies" : "React, Node.js, MongoDB",
-    "featured" : false
-  }, {
-    "project_title" : "Project Name",
-    "project_category" : "Web Development",
-    "project_description" : "A brief description of the project and what makes it special.",
-    "project_image" : {
-      "src" : "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
-      "alt" : "brueghel",
-      "size_type" : "exact",
-      "width" : 277,
-      "height" : 182,
-      "loading" : "lazy"
-    },
-    "project_link" : "",
-    "github_link" : "",
-    "project_technologies" : "React, Node.js, MongoDB",
-    "featured" : false
-  }, {
-    "project_title" : "Project Name",
-    "project_category" : "Web Development",
-    "project_description" : "A brief description of the project and what makes it special.",
-    "project_image" : {
-      "src" : "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
-      "alt" : "brueghel",
-      "size_type" : "exact",
-      "width" : 277,
-      "height" : 182,
-      "loading" : "lazy"
-    },
-    "project_link" : "",
-    "github_link" : "",
-    "project_technologies" : "React, Node.js, MongoDB",
-    "featured" : false
-  } ]
-}, {
-  "id" : "projects_styles_background",
-  "name" : "projects_styles_background",
-  "label" : "Background",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "card_background_color",
-    "name" : "card_background_color",
-    "label" : "Card Background Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#ffffff", "opacity" : 100 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "projects_styles_overlay",
-  "name" : "projects_styles_overlay",
-  "label" : "Overlay",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "overlay_color",
-    "name" : "overlay_color",
-    "label" : "Image Overlay Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#6366f1", "opacity" : 85 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "projects_styles_hover",
-  "name" : "projects_styles_hover",
-  "label" : "Hover",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "image_hover_scale",
-    "name" : "image_hover_scale",
-    "label" : "Image Hover Scale (%)",
-    "required" : false,
-    "locked" : false,
-    "display" : "text",
-    "min" : 100,
-    "max" : 150,
-    "step" : 5,
-    "type" : "number",
-    "display_width" : null,
-    "default" : 110
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "projects_styles_tags",
-  "name" : "projects_styles_tags",
-  "label" : "Tags",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "tag_background_color",
-    "name" : "tag_background_color",
-    "label" : "Tag Background Color",
-    "required" : false,
-    "locked" : false,
-    "type" : "color",
-    "display_width" : null,
-    "default" : { "color" : "#ec4899", "opacity" : 100 }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-}, {
-  "id" : "projects_styles_filters",
-  "name" : "projects_styles_filters",
-  "label" : "Filters",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "filter_button_style",
-    "name" : "filter_button_style",
-    "label" : "Filter Button Style",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "outline", "Outline" ], [ "solid", "Solid" ], [ "underline", "Underline" ] ],
-    "multiple" : false,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "outline"
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "display_width" : null
-} ]
+    "children": [
+      {
+        "id": "project_image",
+        "name": "project_image",
+        "label": "Project Image",
+        "help_text": "Recommended size: 1200x800px",
+        "required": true,
+        "locked": false,
+        "responsive": false,
+        "resizable": true,
+        "show_loading": false,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "src": "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
+          "alt": "brueghel",
+          "size_type": "exact",
+          "width": 277,
+          "height": 182,
+          "loading": "lazy"
+        }
+      },
+      {
+        "id": "project_title",
+        "name": "project_title",
+        "label": "Project Title",
+        "required": true,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Project Name"
+      },
+      {
+        "id": "project_category",
+        "name": "project_category",
+        "label": "Project Category",
+        "help_text": "e.g., Web Development, Mobile App, UI/UX Design",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Web Development"
+      },
+      {
+        "id": "project_description",
+        "name": "project_description",
+        "label": "Project Description",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "A brief description of the project and what makes it special."
+      },
+      {
+        "id": "project_link",
+        "name": "project_link",
+        "label": "Live Project URL",
+        "help_text": "Link to the live project",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "url",
+        "display_width": null,
+        "default": ""
+      },
+      {
+        "id": "github_link",
+        "name": "github_link",
+        "label": "GitHub Repository URL",
+        "help_text": "Link to the GitHub repository",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "url",
+        "display_width": null,
+        "default": ""
+      },
+      {
+        "id": "project_technologies",
+        "name": "project_technologies",
+        "label": "Technologies Used",
+        "help_text": "Comma-separated list of technologies",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "React, Node.js, MongoDB"
+      },
+      {
+        "id": "featured",
+        "name": "featured",
+        "label": "Featured Project",
+        "help_text": "Mark as a featured project",
+        "required": false,
+        "locked": false,
+        "display": "checkbox",
+        "type": "boolean",
+        "display_width": null,
+        "default": false
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "project_title": "Project Name",
+        "project_category": "Web Development",
+        "project_description": "A brief description of the project and what makes it special.",
+        "project_image": {
+          "src": "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
+          "alt": "brueghel",
+          "size_type": "exact",
+          "width": 277,
+          "height": 182,
+          "loading": "lazy"
+        },
+        "project_link": "",
+        "github_link": "",
+        "project_technologies": "React, Node.js, MongoDB",
+        "featured": false
+      },
+      {
+        "project_title": "Project Name",
+        "project_category": "Web Development",
+        "project_description": "A brief description of the project and what makes it special.",
+        "project_image": {
+          "src": "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
+          "alt": "brueghel",
+          "size_type": "exact",
+          "width": 277,
+          "height": 182,
+          "loading": "lazy"
+        },
+        "project_link": "",
+        "github_link": "",
+        "project_technologies": "React, Node.js, MongoDB",
+        "featured": false
+      },
+      {
+        "project_title": "Project Name",
+        "project_category": "Web Development",
+        "project_description": "A brief description of the project and what makes it special.",
+        "project_image": {
+          "src": "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
+          "alt": "brueghel",
+          "size_type": "exact",
+          "width": 277,
+          "height": 182,
+          "loading": "lazy"
+        },
+        "project_link": "",
+        "github_link": "",
+        "project_technologies": "React, Node.js, MongoDB",
+        "featured": false
+      },
+      {
+        "project_title": "Project Name",
+        "project_category": "Web Development",
+        "project_description": "A brief description of the project and what makes it special.",
+        "project_image": {
+          "src": "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
+          "alt": "brueghel",
+          "size_type": "exact",
+          "width": 277,
+          "height": 182,
+          "loading": "lazy"
+        },
+        "project_link": "",
+        "github_link": "",
+        "project_technologies": "React, Node.js, MongoDB",
+        "featured": false
+      },
+      {
+        "project_title": "Project Name",
+        "project_category": "Web Development",
+        "project_description": "A brief description of the project and what makes it special.",
+        "project_image": {
+          "src": "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
+          "alt": "brueghel",
+          "size_type": "exact",
+          "width": 277,
+          "height": 182,
+          "loading": "lazy"
+        },
+        "project_link": "",
+        "github_link": "",
+        "project_technologies": "React, Node.js, MongoDB",
+        "featured": false
+      },
+      {
+        "project_title": "Project Name",
+        "project_category": "Web Development",
+        "project_description": "A brief description of the project and what makes it special.",
+        "project_image": {
+          "src": "https://147309839.fs1.hubspotusercontent-eu1.net/hubfs/147309839/brueghel.jpeg",
+          "alt": "brueghel",
+          "size_type": "exact",
+          "width": 277,
+          "height": 182,
+          "loading": "lazy"
+        },
+        "project_link": "",
+        "github_link": "",
+        "project_technologies": "React, Node.js, MongoDB",
+        "featured": false
+      }
+    ]
+  },
+  {
+    "id": "projects_styles_background",
+    "name": "projects_styles_background",
+    "label": "Background",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "card_background_color",
+        "name": "card_background_color",
+        "label": "Card Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#ffffff", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "projects_styles_overlay",
+    "name": "projects_styles_overlay",
+    "label": "Overlay",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "overlay_color",
+        "name": "overlay_color",
+        "label": "Image Overlay Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#6366f1", "opacity": 85 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "projects_styles_hover",
+    "name": "projects_styles_hover",
+    "label": "Hover",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "image_hover_scale",
+        "name": "image_hover_scale",
+        "label": "Image Hover Scale (%)",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "type": "number",
+        "display_width": null,
+        "default": 110
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "projects_styles_tags",
+    "name": "projects_styles_tags",
+    "label": "Tags",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "tag_background_color",
+        "name": "tag_background_color",
+        "label": "Tag Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#ec4899", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "projects_styles_filters",
+    "name": "projects_styles_filters",
+    "label": "Filters",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "filter_button_style",
+        "name": "filter_button_style",
+        "label": "Filter Button Style",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          ["outline", "Outline"],
+          ["solid", "Solid"],
+          ["underline", "Underline"]
+        ],
+        "multiple": false,
+        "type": "choice",
+        "display_width": null,
+        "default": "outline"
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  }
+]
