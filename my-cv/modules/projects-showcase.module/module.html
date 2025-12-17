@@ -1,15 +1,77 @@
+{% set spacing = module.style.spacing.spacing_field %}
+{% set mobile_spacing = module.style.spacing.mobile_spacing %}
+{% set bg_color = module.style.background.bg_color %}
+{% set container_size = module.style.container.select_size %}
+{% set custom_width = module.style.container.custom_width %}
+{% set card = module.style.card %}
+{% set overlay = module.style.overlay %}
+{% set category_badge = module.style.category_badge %}
+{% set featured_badge = module.style.featured_badge %}
+{% set tags = module.style.tags %}
+{% set filters = module.style.filters %}
+{% set typography = module.style.typography %}
+
+{% set container_class = 'projects-showcase__container' %}
+{% if container_size == 'full_width' %}
+  {% set container_class = 'projects-showcase__container--full' %}
+{% elif container_size == 'custom' %}
+  {% set container_class = 'projects-showcase__container--custom' %}
+{% endif %}
+
 <section
   class="projects-showcase__section"
   id="projects"
   style="
-           --projects-card-bg: {{ module.projects_section_styles.card_background_color.color|default('#ffffff') }};
-           --projects-overlay-color: {{ module.projects_section_styles.overlay_color.color|default('#667eea') }};
-           --projects-image-scale: {{ module.projects_section_styles.image_hover_scale|default(110) }}%;
-           --projects-tag-bg: {{ module.projects_section_styles.tag_background_color.color|default('#ec4899') }};
-           --projects-filter-style: '{{ module.projects_section_styles.filter_button_style|default('outline') }}';
-         "
+    --section-bg: {{ bg_color.color|default('#ffffff') }};
+    --section-bg-opacity: {{ bg_color.opacity|default(100) }}%;
+    --spacing-top: {{ spacing.padding.top.value|default(80) }}{{ spacing.padding.top.units|default('px') }};
+    --spacing-bottom: {{ spacing.padding.bottom.value|default(80) }}{{ spacing.padding.bottom.units|default('px') }};
+    --spacing-left: {{ spacing.padding.left.value|default(20) }}{{ spacing.padding.left.units|default('px') }};
+    --spacing-right: {{ spacing.padding.right.value|default(20) }}{{ spacing.padding.right.units|default('px') }};
+    {% if module.style.spacing.change_mobile_spacing %}
+    --mobile-spacing-top: {{ mobile_spacing.padding.top.value|default(60) }}{{ mobile_spacing.padding.top.units|default('px') }};
+    --mobile-spacing-bottom: {{ mobile_spacing.padding.bottom.value|default(60) }}{{ mobile_spacing.padding.bottom.units|default('px') }};
+    {% endif %}
+    {% if container_size == 'custom' %}
+    --container-width: {{ custom_width|default(1200) }}px;
+    {% endif %}
+    --card-bg: {{ card.card_bg_color.color|default('#ffffff') }};
+    --card-bg-opacity: {{ card.card_bg_color.opacity|default(100) }}%;
+    --card-radius: {{ card.card_border_radius|default(16) }}px;
+    --card-shadow: {{ card.card_shadow|default(0.1) }};
+    --overlay-color: {{ overlay.overlay_color.color|default('#6366f1') }};
+    --overlay-opacity: {{ overlay.overlay_color.opacity|default(85) }}%;
+    --image-hover-scale: {{ overlay.image_hover_scale|default(110) }}%;
+    --category-badge-bg: {{ category_badge.category_bg_color.color|default('#f0f9ff') }};
+    --category-badge-bg-opacity: {{ category_badge.category_bg_color.opacity|default(100) }}%;
+    --category-badge-text: {{ category_badge.category_text_color.color|default('#6366f1') }};
+    --category-badge-text-opacity: {{ category_badge.category_text_color.opacity|default(100) }}%;
+    --category-badge-radius: {{ category_badge.category_border_radius|default(20) }}px;
+    --featured-badge-bg: {{ featured_badge.featured_badge_bg.color|default('#6366f1') }};
+    --featured-badge-bg-opacity: {{ featured_badge.featured_badge_bg.opacity|default(100) }}%;
+    --featured-badge-text: {{ featured_badge.featured_badge_text.color|default('#ffffff') }};
+    --featured-badge-text-opacity: {{ featured_badge.featured_badge_text.opacity|default(100) }}%;
+    --featured-border: {{ featured_badge.featured_border_color.color|default('#6366f1') }};
+    --featured-border-opacity: {{ featured_badge.featured_border_color.opacity|default(100) }}%;
+    --featured-badge-radius: {{ featured_badge.featured_badge_radius|default(50) }}px;
+    --tag-bg: {{ tags.tag_bg_color.color|default('#ec4899') }};
+    --tag-bg-opacity: {{ tags.tag_bg_color.opacity|default(100) }}%;
+    --tag-text: {{ tags.tag_text_color.color|default('#ffffff') }};
+    --tag-text-opacity: {{ tags.tag_text_color.opacity|default(100) }}%;
+    --tag-radius: {{ tags.tag_border_radius|default(20) }}px;
+    --filter-style: '{{ filters.filter_button_style|default('outline') }}';
+    --filter-active: {{ filters.filter_active_color.color|default('#6366f1') }};
+    --filter-active-opacity: {{ filters.filter_active_color.opacity|default(100) }}%;
+    --filter-radius: {{ filters.filter_border_radius|default(25) }}px;
+    --title-color: {{ typography.title_color.color|default('#1e293b') }};
+    --title-opacity: {{ typography.title_color.opacity|default(100) }}%;
+    --category-color: {{ typography.category_color.color|default('#6366f1') }};
+    --category-opacity: {{ typography.category_color.opacity|default(100) }}%;
+    --description-color: {{ typography.description_color.color|default('#64748b') }};
+    --description-opacity: {{ typography.description_color.opacity|default(100) }}%;
+  "
 >
-  <div class="projects-showcase__container">
+  <div class="{{ container_class }}">
     {% if module.section_title %}
     <h2 class="projects-showcase__title">{{ module.section_title }}</h2>
     {% endif %} {% if module.section_subtitle %}
@@ -46,17 +108,15 @@
         data-project-index="{{ loop.index0 }}"
       >
         <div class="projects-showcase__image-wrapper">
-          {% set has_image = project.project_image.src and
-          project.project_image.src != "" %} {% if has_image %}
+          {% set has_image = project.project_image.src and project.project_image.src != "" %}
+          {% if has_image %}
           <img
             src="{{ project.project_image.src }}"
             alt="{{ project.project_image.alt|default(project.project_title) }}"
             class="projects-showcase__image"
-            {%
-            if
-            loop.index
+            {% if loop.index > 3 %}loading="lazy"{% endif %}
           />
-          3 %}loading="lazy"{% endif %} /> {% else %}
+          {% else %}
           <div class="projects-showcase__image-placeholder">
             <i class="fas fa-image"></i>
             <span>Upload Project Image</span>

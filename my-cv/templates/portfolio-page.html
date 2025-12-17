@@ -4,118 +4,28 @@
   label: Personal Portfolio
   screenshotPath: ../images/portfolio-template.png
 -->
-{% extends "/my-cv/templates/layouts/base.html" %}
-
-{% block page_title %}{{ site_settings.company_name }} - Full Stack Developer Portfolio{% endblock %}
-
-{% block meta_description %}Professional portfolio of {{ site_settings.company_name }}, a full stack developer specializing in modern web development, UI/UX design, and creating exceptional digital experiences.{% endblock %}
-
-{% block meta_keywords %}web developer, full stack developer, frontend developer, backend developer, portfolio, UI/UX designer{% endblock %}
-
-{% block body_class %}portfolio-page{% endblock %}
-
-{% block body %}
-
-<section id="home">
-  {% dnd_area "hero_area", label="Hero Banner" %}
-    {% dnd_section
-      padding={
-        "default": {
-          "top": "0px",
-          "bottom": "0px"
-        }
-      },
-      full_width=true
-    %}
-      {% dnd_column width=12 offset=0 %}
-        {% dnd_row %}
-          {% dnd_module path="../modules/hero-banner" %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
-  {% end_dnd_area %}
-</section>
-
-<section id="about">
-  {% dnd_area "about_area", label="About Section" %}
-    {% dnd_section
-      padding={
-        "default": {
-          "top": "80px",
-          "bottom": "80px"
-        }
-      }
-    %}
-      {% dnd_column width=12 offset=0 %}
-        {% dnd_row %}
-          {% dnd_module path="../modules/about-section" %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
-  {% end_dnd_area %}
-</section>
-
-<section id="skills">
-  {% dnd_area "skills_area", label="Skills Section" %}
-    {% dnd_section
-      padding={
-        "default": {
-          "top":  "80px",
-          "bottom": "80px"
-        }
-      }
-    %}
-      {% dnd_column width=12 offset=0 %}
-        {% dnd_row %}
-          {% dnd_module path="../modules/skills-grid" %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
-  {% end_dnd_area %}
-</section>
-
-<section id="projects">
-  {% dnd_area "projects_area", label="Projects Section" %}
-    {% dnd_section
-      padding={
-        "default": {
-          "top": "80px",
-          "bottom": "80px"
-        }
-      }
-    %}
-      {% dnd_column width=12 offset=0 %}
-        {% dnd_row %}
-          {% dnd_module path="../modules/projects-showcase" %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
-  {% end_dnd_area %}
-</section>
-
-<section id="contact">
-  {% dnd_area "contact_area", label="Contact Section" %}
-    {% dnd_section
-      padding={
-        "default":  {
-          "top": "0px",
-          "bottom": "0px"
-        }
-      },
-      full_width=true
-    %}
-      {% dnd_column width=12 offset=0 %}
-        {% dnd_row %}
-          {% dnd_module path="../modules/contact-form" %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
-  {% end_dnd_area %}
-</section>
-
-{% endblock %}
+{% extends "/my-cv/templates/layouts/base.html" %} {% block page_title %}{{
+site_settings.company_name }} - Full Stack Developer Portfolio{% endblock %} {%
+block meta_description %}Professional portfolio of {{ site_settings.company_name
+}}, a full stack developer specializing in modern web development, UI/UX design,
+and creating exceptional digital experiences.{% endblock %} {% block
+meta_keywords %}web developer, full stack developer, frontend developer, backend
+developer, portfolio, UI/UX designer{% endblock %} {% block body_class
+%}portfolio-page{% endblock %} {% block body %} {% dnd_area "hero_area",
+label="Hero Section" %} {% dnd_section padding={ "default": { "top": "0px",
+"bottom": "0px" } }, full_width=true, html_id="home", class="hero-section" %} {%
+dnd_column width=12 offset=0 %} {% dnd_row %} {% dnd_module
+path="../modules/hero-banner" %} {% end_dnd_module %} {% end_dnd_row %} {%
+end_dnd_column %} {% end_dnd_section %} {% end_dnd_area %} {% dnd_area
+"about_area", label="About Section" %} {% dnd_section padding={ "default": {
+"top": "80px", "bottom": "80px" } }, html_id="about", class="about-section" %}
+{% dnd_column width=12 offset=0 %} {% dnd_row %} {% dnd_module
+path="../modules/about-section" %} {% end_dnd_module %} {% end_dnd_row %} {%
+end_dnd_column %} {% end_dnd_section %} {% end_dnd_area %} {% dnd_area
+"additional_sections", label="Additional Sections (Drag sections here)" %} {%
+end_dnd_area %} {% dnd_area "contact_area", label="Contact Section" %} {%
+dnd_section padding={ "default": { "top": "0px", "bottom": "0px" } },
+full_width=true, html_id="contact", class="contact-section" %} {% dnd_column
+width=12 offset=0 %} {% dnd_row %} {% dnd_module path="../modules/contact-form"
+%} {% end_dnd_module %} {% end_dnd_row %} {% end_dnd_column %} {%
+end_dnd_section %} {% end_dnd_area %} {% endblock %}

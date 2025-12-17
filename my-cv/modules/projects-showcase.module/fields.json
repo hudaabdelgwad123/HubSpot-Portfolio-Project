@@ -309,129 +309,665 @@
     ]
   },
   {
-    "id": "projects_styles_background",
-    "name": "projects_styles_background",
-    "label": "Background",
+    "id": "style",
+    "name": "style",
+    "label": "Style",
     "required": false,
     "locked": false,
-    "children": [
-      {
-        "id": "card_background_color",
-        "name": "card_background_color",
-        "label": "Card Background Color",
-        "required": false,
-        "locked": false,
-        "type": "color",
-        "display_width": null,
-        "default": { "color": "#ffffff", "opacity": 100 }
-      }
-    ],
+    "type": "group",
     "tab": "STYLE",
     "expanded": false,
-    "type": "group",
-    "display_width": null
-  },
-  {
-    "id": "projects_styles_overlay",
-    "name": "projects_styles_overlay",
-    "label": "Overlay",
-    "required": false,
-    "locked": false,
     "children": [
       {
-        "id": "overlay_color",
-        "name": "overlay_color",
-        "label": "Image Overlay Color",
+        "id": "spacing",
+        "name": "spacing",
+        "label": "Spacing",
         "required": false,
         "locked": false,
-        "type": "color",
-        "display_width": null,
-        "default": { "color": "#6366f1", "opacity": 85 }
-      }
-    ],
-    "tab": "STYLE",
-    "expanded": false,
-    "type": "group",
-    "display_width": null
-  },
-  {
-    "id": "projects_styles_hover",
-    "name": "projects_styles_hover",
-    "label": "Hover",
-    "required": false,
-    "locked": false,
-    "children": [
-      {
-        "id": "image_hover_scale",
-        "name": "image_hover_scale",
-        "label": "Image Hover Scale (%)",
-        "required": false,
-        "locked": false,
-        "display": "text",
-        "min": 100,
-        "max": 150,
-        "step": 5,
-        "type": "number",
-        "display_width": null,
-        "default": 110
-      }
-    ],
-    "tab": "STYLE",
-    "expanded": false,
-    "type": "group",
-    "display_width": null
-  },
-  {
-    "id": "projects_styles_tags",
-    "name": "projects_styles_tags",
-    "label": "Tags",
-    "required": false,
-    "locked": false,
-    "children": [
-      {
-        "id": "tag_background_color",
-        "name": "tag_background_color",
-        "label": "Tag Background Color",
-        "required": false,
-        "locked": false,
-        "type": "color",
-        "display_width": null,
-        "default": { "color": "#ec4899", "opacity": 100 }
-      }
-    ],
-    "tab": "STYLE",
-    "expanded": false,
-    "type": "group",
-    "display_width": null
-  },
-  {
-    "id": "projects_styles_filters",
-    "name": "projects_styles_filters",
-    "label": "Filters",
-    "required": false,
-    "locked": false,
-    "children": [
-      {
-        "id": "filter_button_style",
-        "name": "filter_button_style",
-        "label": "Filter Button Style",
-        "required": false,
-        "locked": false,
-        "display": "select",
-        "choices": [
-          ["outline", "Outline"],
-          ["solid", "Solid"],
-          ["underline", "Underline"]
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "spacing_field",
+            "name": "spacing_field",
+            "label": "Spacing",
+            "required": false,
+            "locked": false,
+            "type": "spacing",
+            "default": {}
+          },
+          {
+            "id": "change_mobile_spacing",
+            "name": "change_mobile_spacing",
+            "label": "Change Mobile Spacing",
+            "required": false,
+            "locked": false,
+            "display": "checkbox",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "id": "mobile_spacing",
+            "name": "mobile_spacing",
+            "label": "Mobile Spacing",
+            "required": false,
+            "locked": false,
+            "type": "spacing",
+            "default": {},
+            "visibility": {
+              "controlling_field": "change_mobile_spacing",
+              "controlling_value_regex": "true",
+              "operator": "EQUAL"
+            }
+          }
         ],
-        "multiple": false,
-        "type": "choice",
-        "display_width": null,
-        "default": "outline"
+        "default": {
+          "spacing_field": {},
+          "change_mobile_spacing": false,
+          "mobile_spacing": {}
+        }
+      },
+      {
+        "id": "background",
+        "name": "background",
+        "label": "Background",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "bg_color",
+            "name": "bg_color",
+            "label": "Background Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#ffffff",
+              "opacity": 100
+            }
+          }
+        ],
+        "default": {
+          "bg_color": {
+            "color": "#ffffff",
+            "opacity": 100
+          }
+        }
+      },
+      {
+        "id": "container",
+        "name": "container",
+        "label": "Container",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "select_size",
+            "name": "select_size",
+            "label": "Select Size",
+            "required": true,
+            "locked": false,
+            "display": "select",
+            "type": "choice",
+            "multiple": false,
+            "reordering_enabled": true,
+            "preset": null,
+            "choices": [
+              ["theme_center", "Theme"],
+              ["full_width", "Full Width"],
+              ["custom", "Custom"]
+            ],
+            "default": "theme_center"
+          },
+          {
+            "id": "custom_width",
+            "name": "custom_width",
+            "label": "Container Width",
+            "required": false,
+            "locked": false,
+            "display": "slider",
+            "type": "number",
+            "min": 900,
+            "max": 2500,
+            "step": 1,
+            "suffix": "px",
+            "default": 1200,
+            "visibility": {
+              "controlling_field": "select_size",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL"
+            }
+          }
+        ],
+        "default": {
+          "select_size": "theme_center",
+          "custom_width": 1200
+        }
+      },
+      {
+        "id": "card",
+        "name": "card",
+        "label": "Card",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "card_bg_color",
+            "name": "card_bg_color",
+            "label": "Card Background Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#ffffff",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "card_border_radius",
+            "name": "card_border_radius",
+            "label": "Card Border Radius",
+            "required": false,
+            "locked": false,
+            "display": "slider",
+            "type": "number",
+            "min": 0,
+            "max": 50,
+            "step": 2,
+            "suffix": "px",
+            "default": 16
+          },
+          {
+            "id": "card_shadow",
+            "name": "card_shadow",
+            "label": "Card Shadow Intensity",
+            "required": false,
+            "locked": false,
+            "display": "slider",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.05,
+            "default": 0.1
+          }
+        ],
+        "default": {
+          "card_bg_color": {
+            "color": "#ffffff",
+            "opacity": 100
+          },
+          "card_border_radius": 16,
+          "card_shadow": 0.1
+        }
+      },
+      {
+        "id": "overlay",
+        "name": "overlay",
+        "label": "Image Overlay",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "overlay_color",
+            "name": "overlay_color",
+            "label": "Overlay Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#6366f1",
+              "opacity": 85
+            }
+          },
+          {
+            "id": "image_hover_scale",
+            "name": "image_hover_scale",
+            "label": "Image Hover Scale (%)",
+            "required": false,
+            "locked": false,
+            "display": "slider",
+            "type": "number",
+            "min": 100,
+            "max": 150,
+            "step": 5,
+            "default": 110
+          }
+        ],
+        "default": {
+          "overlay_color": {
+            "color": "#6366f1",
+            "opacity": 85
+          },
+          "image_hover_scale": 110
+        }
+      },
+      {
+        "id": "category_badge",
+        "name": "category_badge",
+        "label": "Category Badge",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "category_bg_color",
+            "name": "category_bg_color",
+            "label": "Badge Background Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#f0f9ff",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "category_text_color",
+            "name": "category_text_color",
+            "label": "Badge Text Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#6366f1",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "category_border_radius",
+            "name": "category_border_radius",
+            "label": "Badge Border Radius",
+            "required": false,
+            "locked": false,
+            "display": "slider",
+            "type": "number",
+            "min": 0,
+            "max": 50,
+            "step": 2,
+            "suffix": "px",
+            "default": 20
+          }
+        ],
+        "default": {
+          "category_bg_color": {
+            "color": "#f0f9ff",
+            "opacity": 100
+          },
+          "category_text_color": {
+            "color": "#6366f1",
+            "opacity": 100
+          },
+          "category_border_radius": 20
+        }
+      },
+      {
+        "id": "featured_badge",
+        "name": "featured_badge",
+        "label": "Featured Badge",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "featured_badge_bg",
+            "name": "featured_badge_bg",
+            "label": "Badge Background Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#6366f1",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "featured_badge_text",
+            "name": "featured_badge_text",
+            "label": "Badge Text Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#ffffff",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "featured_border_color",
+            "name": "featured_border_color",
+            "label": "Card Border Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#6366f1",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "featured_badge_radius",
+            "name": "featured_badge_radius",
+            "label": "Badge Border Radius",
+            "required": false,
+            "locked": false,
+            "display": "slider",
+            "type": "number",
+            "min": 0,
+            "max": 50,
+            "step": 2,
+            "suffix": "px",
+            "default": 50
+          }
+        ],
+        "default": {
+          "featured_badge_bg": {
+            "color": "#6366f1",
+            "opacity": 100
+          },
+          "featured_badge_text": {
+            "color": "#ffffff",
+            "opacity": 100
+          },
+          "featured_border_color": {
+            "color": "#6366f1",
+            "opacity": 100
+          },
+          "featured_badge_radius": 50
+        }
+      },
+      {
+        "id": "tags",
+        "name": "tags",
+        "label": "Technology Tags",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "tag_bg_color",
+            "name": "tag_bg_color",
+            "label": "Tag Background Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#ec4899",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "tag_text_color",
+            "name": "tag_text_color",
+            "label": "Tag Text Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#ffffff",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "tag_border_radius",
+            "name": "tag_border_radius",
+            "label": "Tag Border Radius",
+            "required": false,
+            "locked": false,
+            "display": "slider",
+            "type": "number",
+            "min": 0,
+            "max": 50,
+            "step": 2,
+            "suffix": "px",
+            "default": 20
+          }
+        ],
+        "default": {
+          "tag_bg_color": {
+            "color": "#ec4899",
+            "opacity": 100
+          },
+          "tag_text_color": {
+            "color": "#ffffff",
+            "opacity": 100
+          },
+          "tag_border_radius": 20
+        }
+      },
+      {
+        "id": "filters",
+        "name": "filters",
+        "label": "Category Filters",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "filter_button_style",
+            "name": "filter_button_style",
+            "label": "Filter Button Style",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "choices": [
+              ["outline", "Outline"],
+              ["solid", "Solid"],
+              ["underline", "Underline"]
+            ],
+            "multiple": false,
+            "type": "choice",
+            "default": "outline"
+          },
+          {
+            "id": "filter_active_color",
+            "name": "filter_active_color",
+            "label": "Active Filter Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#6366f1",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "filter_border_radius",
+            "name": "filter_border_radius",
+            "label": "Filter Border Radius",
+            "required": false,
+            "locked": false,
+            "display": "slider",
+            "type": "number",
+            "min": 0,
+            "max": 50,
+            "step": 2,
+            "suffix": "px",
+            "default": 25
+          }
+        ],
+        "default": {
+          "filter_button_style": "outline",
+          "filter_active_color": {
+            "color": "#6366f1",
+            "opacity": 100
+          },
+          "filter_border_radius": 25
+        }
+      },
+      {
+        "id": "typography",
+        "name": "typography",
+        "label": "Typography",
+        "required": false,
+        "locked": false,
+        "type": "group",
+        "tab": "STYLE",
+        "expanded": false,
+        "children": [
+          {
+            "id": "title_color",
+            "name": "title_color",
+            "label": "Project Title Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#1e293b",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "category_color",
+            "name": "category_color",
+            "label": "Category Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#6366f1",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "description_color",
+            "name": "description_color",
+            "label": "Description Color",
+            "required": false,
+            "locked": false,
+            "type": "color",
+            "default": {
+              "color": "#64748b",
+              "opacity": 100
+            }
+          }
+        ],
+        "default": {
+          "title_color": {
+            "color": "#1e293b",
+            "opacity": 100
+          },
+          "category_color": {
+            "color": "#6366f1",
+            "opacity": 100
+          },
+          "description_color": {
+            "color": "#64748b",
+            "opacity": 100
+          }
+        }
       }
     ],
-    "tab": "STYLE",
-    "expanded": false,
-    "type": "group",
-    "display_width": null
+    "default": {
+      "spacing": {
+        "spacing_field": {},
+        "change_mobile_spacing": false,
+        "mobile_spacing": {}
+      },
+      "background": {
+        "bg_color": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      },
+      "container": {
+        "select_size": "theme_center",
+        "custom_width": 1200
+      },
+      "card": {
+        "card_bg_color": {
+          "color": "#ffffff",
+          "opacity": 100
+        },
+        "card_border_radius": 16,
+        "card_shadow": 0.1
+      },
+      "overlay": {
+        "overlay_color": {
+          "color": "#6366f1",
+          "opacity": 85
+        },
+        "image_hover_scale": 110
+      },
+      "category_badge": {
+        "category_bg_color": {
+          "color": "#f0f9ff",
+          "opacity": 100
+        },
+        "category_text_color": {
+          "color": "#6366f1",
+          "opacity": 100
+        },
+        "category_border_radius": 20
+      },
+      "featured_badge": {
+        "featured_badge_bg": {
+          "color": "#6366f1",
+          "opacity": 100
+        },
+        "featured_badge_text": {
+          "color": "#ffffff",
+          "opacity": 100
+        },
+        "featured_border_color": {
+          "color": "#6366f1",
+          "opacity": 100
+        },
+        "featured_badge_radius": 50
+      },
+      "tags": {
+        "tag_bg_color": {
+          "color": "#ec4899",
+          "opacity": 100
+        },
+        "tag_text_color": {
+          "color": "#ffffff",
+          "opacity": 100
+        },
+        "tag_border_radius": 20
+      },
+      "filters": {
+        "filter_button_style": "outline",
+        "filter_active_color": {
+          "color": "#6366f1",
+          "opacity": 100
+        },
+        "filter_border_radius": 25
+      },
+      "typography": {
+        "title_color": {
+          "color": "#1e293b",
+          "opacity": 100
+        },
+        "category_color": {
+          "color": "#6366f1",
+          "opacity": 100
+        },
+        "description_color": {
+          "color": "#64748b",
+          "opacity": 100
+        }
+      }
+    }
   }
 ]

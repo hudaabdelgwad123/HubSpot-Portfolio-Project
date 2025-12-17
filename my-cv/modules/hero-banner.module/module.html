@@ -1,4 +1,4 @@
-<section class="hero-banner hero-{{ module.background_type }}" 
+<section class="hero-banner hero-{{ module.background_type }} " 
   {% if module.background_type == 'image' and module.background_image.src %}
     style="background-image: url('{{ module.background_image.src }}');"
   {% endif %}
