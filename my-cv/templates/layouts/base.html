@@ -67,7 +67,7 @@
     {% endif %}
     <meta
       name="theme-color"
-      content="{{ theme.theme_settings.primary_color.color|default('#667eea') }}"
+      content="{{ theme.colors.primary_color.color|default('#667eea') }}"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,13 +75,45 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
     <style>
-      :root {
-        --primary-color: {{ theme.theme_settings.primary_color.color|default('#667eea') }};
-        --secondary-color: {{ theme.theme_settings.secondary_color.color|default('#764ba2') }};
-        --text-color: {{ theme.theme_settings.text_color.color|default('#333333') }};
-        --background-color: {{ theme.theme_settings.background_color.color|default('#ffffff') }};
-      }
       {% include "/my-cv/css/critical.css" %}
+      :root {
+        --primary: {{ theme.colors.primary_color.color|default('#667eea') }};
+        --primary-light: {{ theme.colors.primary_color.color|default('#667eea') }};
+        --primary-dark: {{ theme.colors.primary_color.color|default('#667eea') }};
+        --secondary: {{ theme.colors.secondary_color.color|default('#764ba2') }};
+        --secondary-light: {{ theme.colors.secondary_color.color|default('#764ba2') }};
+        --accent: {{ theme.colors.secondary_color.color|default('#764ba2') }};
+        --accent-light: {{ theme.colors.secondary_color.color|default('#764ba2') }};
+
+        --text: {{ theme.colors.text_color.color|default('#333333') }};
+        --text-light: {{ theme.colors.text_color.color|default('#333333') }};
+        --text-lighter: {{ theme.colors.text_color.color|default('#333333') }};
+
+        --light: {{ theme.colors.light_background.color|default('#f9fafb') }};
+        --light-gray: {{ theme.colors.light_background.color|default('#f9fafb') }};
+        --white: {{ theme.colors.background_color.color|default('#ffffff') }};
+        --dark: {{ theme.colors.text_color.color|default('#333333') }};
+
+        --gradient-primary: linear-gradient(
+          135deg,
+          {{ theme.colors.primary_color.color|default('#667eea') }} 0%,
+          {{ theme.colors.secondary_color.color|default('#764ba2') }} 100%
+        );
+        --gradient-secondary: linear-gradient(
+          135deg,
+          {{ theme.colors.secondary_color.color|default('#764ba2') }} 0%,
+          {{ theme.colors.primary_color.color|default('#667eea') }} 100%
+        );
+        --gradient-dark: linear-gradient(
+          135deg,
+          {{ theme.colors.text_color.color|default('#333333') }} 0%,
+          {{ theme.colors.text_color.color|default('#333333') }} 100%
+        );
+
+        /* Footer-specific vars */
+        --footer-background: {{ theme.footer.footer_bg_color.color|default(theme.colors.background_color.color|default('#ffffff')) }};
+        --footer-text: {{ theme.footer.footer_text_color.color|default(theme.colors.text_color.color|default('#333333')) }};
+      }
     </style>
 
     <link

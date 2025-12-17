@@ -1,0 +1,381 @@
+[
+  {
+    "id": "section_title",
+    "name": "section_title",
+    "label": "Section Title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Education"
+  },
+  {
+    "id": "section_subtitle",
+    "name": "section_subtitle",
+    "label": "Section Subtitle",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "My academic background"
+  },
+  {
+    "id": "education_entries",
+    "name": "education_entries",
+    "label": "Education Entries",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "sorting_label_field": null,
+      "default": 2
+    },
+    "children": [
+      {
+        "id": "school_name",
+        "name": "school_name",
+        "label": "School/University Name",
+        "required": true,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "University Name"
+      },
+      {
+        "id": "degree",
+        "name": "degree",
+        "label": "Degree/Certification",
+        "required": true,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Bachelor of Science in Computer Science"
+      },
+      {
+        "id": "field_of_study",
+        "name": "field_of_study",
+        "label": "Field of Study",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Computer Science"
+      },
+      {
+        "id": "start_date",
+        "name": "start_date",
+        "label": "Start Date",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "2018"
+      },
+      {
+        "id": "end_date",
+        "name": "end_date",
+        "label": "End Date",
+        "help_text": "Leave empty or use 'Present' for ongoing",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "2022"
+      },
+      {
+        "id": "description",
+        "name": "description",
+        "label": "Description",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "display_width": null,
+        "default": "<p>Relevant coursework, achievements, or activities.</p>"
+      },
+      {
+        "id": "grade",
+        "name": "grade",
+        "label": "Grade/GPA",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": ""
+      },
+      {
+        "id": "school_logo",
+        "name": "school_logo",
+        "label": "School Logo",
+        "required": false,
+        "locked": false,
+        "responsive": false,
+        "resizable": true,
+        "show_loading": false,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "src": "",
+          "alt": null,
+          "size_type": null,
+          "width": null,
+          "height": null,
+          "max_width": null,
+          "max_height": null,
+          "loading": "disabled"
+        }
+      },
+      {
+        "id": "card_background_override",
+        "name": "card_background_override",
+        "label": "Card Background Override",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": null
+      },
+      {
+        "id": "card_border_override",
+        "name": "card_border_override",
+        "label": "Card Border Override",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": null
+      },
+      {
+        "id": "school_color_override",
+        "name": "school_color_override",
+        "label": "School Name Color Override",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": null
+      },
+      {
+        "id": "degree_color_override",
+        "name": "degree_color_override",
+        "label": "Degree Color Override",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": null
+      },
+      {
+        "id": "field_color_override",
+        "name": "field_color_override",
+        "label": "Field of Study Color Override",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": null
+      },
+      {
+        "id": "description_color_override",
+        "name": "description_color_override",
+        "label": "Description Text Color Override",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": null
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "show_timeline",
+    "name": "show_timeline",
+    "label": "Show Timeline View",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": true
+  },
+  {
+    "id": "education_styles_background",
+    "name": "education_styles_background",
+    "label": "Background",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "background_color",
+        "name": "background_color",
+        "label": "Section Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#ffffff", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "education_styles_cards",
+    "name": "education_styles_cards",
+    "label": "Cards",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "card_background_color",
+        "name": "card_background_color",
+        "label": "Card Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#f8fafc", "opacity": 100 }
+      },
+      {
+        "id": "card_border_radius",
+        "name": "card_border_radius",
+        "label": "Card Border Radius (px)",
+        "required": false,
+        "locked": false,
+        "display": "text",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "type": "number",
+        "display_width": null,
+        "default": 16
+      },
+      {
+        "id": "enable_card_shadow",
+        "name": "enable_card_shadow",
+        "label": "Enable Card Shadow",
+        "required": false,
+        "locked": false,
+        "display": "checkbox",
+        "type": "boolean",
+        "display_width": null,
+        "default": true
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "education_styles_text",
+    "name": "education_styles_text",
+    "label": "Text & Borders",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "school_color",
+        "name": "school_color",
+        "label": "School Name Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#1f2937", "opacity": 100 }
+      },
+      {
+        "id": "degree_color",
+        "name": "degree_color",
+        "label": "Degree Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#6366f1", "opacity": 100 }
+      },
+      {
+        "id": "field_color",
+        "name": "field_color",
+        "label": "Field of Study Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#64748b", "opacity": 100 }
+      },
+      {
+        "id": "description_color",
+        "name": "description_color",
+        "label": "Description Text Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#475569", "opacity": 100 }
+      },
+      {
+        "id": "card_border_color",
+        "name": "card_border_color",
+        "label": "Card Border Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#e2e8f0", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  },
+  {
+    "id": "education_styles_accent",
+    "name": "education_styles_accent",
+    "label": "Accent Colors",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "accent_color",
+        "name": "accent_color",
+        "label": "Accent Color (timeline, icons)",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#6366f1", "opacity": 100 }
+      },
+      {
+        "id": "date_color",
+        "name": "date_color",
+        "label": "Date Text Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": { "color": "#64748b", "opacity": 100 }
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "type": "group",
+    "display_width": null
+  }
+]

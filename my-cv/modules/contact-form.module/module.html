@@ -2,12 +2,23 @@
   class="contact-section"
   id="contact"
   style="
-           --contact-bg: {{ module.contact_styles_background.background_color.color|default('#f3f4f6') }};
-           --contact-card-bg: {{ module.contact_styles_card.card_background_color.color|default('#ffffff') }};
-           --contact-accent: {{ module.contact_styles_text.accent_color.color|default('#6366f1') }};
-           --contact-input-bg: {{ module.contact_styles_inputs.input_background_color.color|default('#f9fafb') }};
-           --contact-glass-enabled: {% if module.contact_styles_effects.enable_glassmorphism %}1{% else %}0{% endif %};
-           --contact-blur: {{ module.contact_styles_effects.blur_amount|default(10) }}px;
+           --contact-bg: {{ module.style.background.bg_color.color|default('#f3f4f6') }};
+           --contact-bg-opacity: {{ module.style.background.bg_color.opacity|default(100) }}%;
+           --contact-card-opacity: {{ module.style.card.card_bg_color.opacity|default(95) }}%;
+           --contact-input-bg: {{ module.style.inputs.input_bg_color.color|default('#f9fafb') }};
+           --contact-input-text: {{ module.style.inputs.input_text_color.color|default('#333333') }};
+           --contact-input-radius: {{ module.style.inputs.border_radius|default(8) }}px;
+           --contact-glass-enabled: {% if module.style.card.enable_glassmorphism %}1{% else %}0{% endif %};
+           --contact-blur: {{ module.style.card.blur_amount|default(10) }}px;
+           --contact-btn-start: {{ module.style.button.button_color_start.color|default('#6366f1') }};
+           --contact-btn-end: {{ module.style.button.button_color_end.color|default('#4338ca') }};
+           --contact-btn-text: {{ module.style.button.button_text_color.color|default('#ffffff') }};
+           --contact-btn-radius: {{ module.style.button.button_radius|default(50) }}px;
+           --contact-btn-py: {{ module.style.button.button_padding_y|default(15) }}px;
+           --contact-btn-px: {{ module.style.button.button_padding_x|default(40) }}px;
+           --contact-btn-shadow: {{ module.style.button.button_shadow_intensity|default(0.35) }};
+           --contact-btn-uppercase: {% if module.style.button.button_uppercase %}uppercase{% else %}none{% endif %};
+           --contact-container-width: {% if module.style.container.select_size == 'custom' %}{{ module.style.container.custom_width|default(1180) }}px{% elif module.style.container.select_size == 'full_width' %}100%{% else %}90%{% endif %};
          "
 >
   <div class="container">

@@ -1,0 +1,112 @@
+<section
+  class="education-section"
+  id="education"
+  style="
+           --education-bg: {{ module.education_styles_background.background_color.color|default('#ffffff') }};
+           --education-card-bg: {{ module.education_styles_cards.card_background_color.color|default('#f8fafc') }};
+           --education-card-radius: {{ module.education_styles_cards.card_border_radius|default(16) }}px;
+           --education-card-shadow-enabled: {% if module.education_styles_cards.enable_card_shadow %}1{% else %}0{% endif %};
+           --education-accent: {{ module.education_styles_accent.accent_color.color|default('#6366f1') }};
+           --education-date-color: {{ module.education_styles_accent.date_color.color|default('#64748b') }};
+           --education-school-color: {{ module.education_styles_text.school_color.color|default('#1f2937') }};
+           --education-degree-color: {{ module.education_styles_text.degree_color.color|default('#6366f1') }};
+           --education-field-color: {{ module.education_styles_text.field_color.color|default('#64748b') }};
+           --education-description-color: {{ module.education_styles_text.description_color.color|default('#475569') }};
+           --education-card-border-color: {{ module.education_styles_text.card_border_color.color|default('#e2e8f0') }};
+         "
+>
+  <div class="container">
+    <div class="education-section__header">
+      {% if module.section_title %}
+      <h2 class="education-section__title">{{ module.section_title }}</h2>
+      {% endif %} {% if module.section_subtitle %}
+      <p class="education-section__subtitle">{{ module.section_subtitle }}</p>
+      {% endif %}
+    </div>
+    <div
+      class="education-section__content {% if module.show_timeline %}education-section__content--timeline{% endif %}"
+    >
+      {% for entry in module.education_entries %} {% set card_bg =
+      entry.card_background_override.color|default(module.education_styles_cards.card_background_color.color|default('#f8fafc'))
+      %} {% set card_border =
+      entry.card_border_override.color|default(module.education_styles_text.card_border_color.color|default('#e2e8f0'))
+      %} {% set school_color =
+      entry.school_color_override.color|default(module.education_styles_text.school_color.color|default('#1f2937'))
+      %} {% set degree_color =
+      entry.degree_color_override.color|default(module.education_styles_text.degree_color.color|default('#6366f1'))
+      %} {% set field_color =
+      entry.field_color_override.color|default(module.education_styles_text.field_color.color|default('#64748b'))
+      %} {% set description_color =
+      entry.description_color_override.color|default(module.education_styles_text.description_color.color|default('#475569'))
+      %}
+
+      <div class="education-card" data-education-index="{{ loop.index0 }}">
+        {% if module.show_timeline %}
+        <div class="education-card__timeline-marker">
+          <div class="education-card__timeline-dot"></div>
+        </div>
+        {% endif %}
+
+        <div
+          class="education-card__inner"
+          style="
+                 --education-card-bg: {{ card_bg }};
+                 --education-card-border-color: {{ card_border }};
+                 --education-school-color: {{ school_color }};
+                 --education-degree-color: {{ degree_color }};
+                 --education-field-color: {{ field_color }};
+                 --education-description-color: {{ description_color }};
+               "
+        >
+          {% if entry.school_logo.src %}
+          <div class="education-card__logo">
+            <img
+              src="{{ entry.school_logo.src }}"
+              alt="{{ entry.school_logo.alt|default(entry.school_name) }}"
+              {%
+              if
+              loop.index
+            />
+            2 %}loading="lazy"{% endif %}>
+          </div>
+          {% endif %}
+
+          <div class="education-card__content">
+            <div class="education-card__header">
+              <div class="education-card__title-group">
+                <h3 class="education-card__school">{{ entry.school_name }}</h3>
+                <h4 class="education-card__degree">{{ entry.degree }}</h4>
+                {% if entry.field_of_study %}
+                <p class="education-card__field">{{ entry.field_of_study }}</p>
+                {% endif %}
+              </div>
+
+              <div class="education-card__meta">
+                <div class="education-card__date">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span
+                    >{{ entry.start_date }} - {{
+                    entry.end_date|default('Present') }}</span
+                  >
+                </div>
+                {% if entry.grade %}
+                <div class="education-card__grade">
+                  <i class="fas fa-award"></i>
+                  <span>{{ entry.grade }}</span>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+
+            {% if entry.description %}
+            <div class="education-card__description">
+              {{ entry.description }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

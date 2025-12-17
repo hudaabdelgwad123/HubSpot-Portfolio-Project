@@ -50,13 +50,13 @@
           project.project_image.src != "" %} {% if has_image %}
           <img
             src="{{ project.project_image.src }}"
-            alt="{{ project.project_image.alt|default(project. project_title) }}"
+            alt="{{ project.project_image.alt|default(project.project_title) }}"
             class="projects-showcase__image"
             {%
             if
             loop.index
           />
-          3 %}loading="lazy"{% endif %}> {% else %}
+          3 %}loading="lazy"{% endif %} /> {% else %}
           <div class="projects-showcase__image-placeholder">
             <i class="fas fa-image"></i>
             <span>Upload Project Image</span>
