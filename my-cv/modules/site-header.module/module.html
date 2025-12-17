@@ -1,0 +1,104 @@
+{% set sticky_enabled = theme.navigation.sticky_header|default(true) %}
+{% set nav_background = theme.navigation.nav_background_color.color|default('#ffffff') %}
+{% set show_progress = theme.navigation.show_scroll_progress|default(true) %}
+{% set branding = module.branding %}
+{% set nav_items = module.navigation_items %}
+{% set mobile = module.mobile %}
+
+<header class="site-header{% if not sticky_enabled %} non-sticky{% endif %}"
+        role="banner"
+        itemscope
+        itemtype="https://schema.org/WPHeader"
+        style="background-color: {{ nav_background }};">
+    <nav class="navbar"
+      id="navbar"
+      role="navigation"
+      aria-label="Main Navigation">
+    <div class="container">
+      {% set logo_href = branding.logo_link.url.href|default('/') %}
+      {% set logo_target = '' %}
+      {% if branding.logo_link.open_in_new_tab %}
+        {% set logo_target = '_blank' %}
+      {% endif %}
+
+      <a href="{{ logo_href }}"
+         class="logo"
+         aria-label="Home"
+         itemprop="url"
+         {% if logo_target == '_blank' %}target="_blank" rel="noopener"{% endif %}>
+        {% if branding.use_custom_logo and branding.logo_image.src %}
+          <img src="{{ branding.logo_image.src }}"
+               alt="{{ branding.logo_image.alt|default(branding.logo_text|default(site_settings.company_name)) }}"
+               class="logo-image" />
+        {% else %}
+          <span itemprop="name">{{ branding.logo_text|default(site_settings.company_name) }}</span>
+        {% endif %}
+      </a>
+
+      <button class="mobile-menu-toggle"
+              id="mobileMenuToggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="navMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+        <ul class="nav-menu"
+          id="navMenu"
+          role="menubar"
+          data-close-on-click="{% if mobile.close_on_link_click %}true{% else %}false{% endif %}">
+        {% if nav_items and nav_items|length %}
+          {% for item in nav_items %}
+            {% set label = item.item_label|trim %}
+            {% if label %}
+              {% set href = '#' %}
+              {% set is_external = false %}
+              {% set open_new_tab = false %}
+              {% if item.link_type == 'external' %}
+                {% set href = item.external_link.url.href|default('#') %}
+                {% set is_external = true %}
+                {% if item.open_in_new_tab or item.external_link.open_in_new_tab %}
+                  {% set open_new_tab = true %}
+                {% endif %}
+              {% elif item.link_type == 'section' %}
+                {% set section_id = item.section_id|default('')|trim('# ') %}
+                {% if section_id %}
+                  {% set href = '#' ~ section_id %}
+                {% endif %}
+              {% endif %}
+              {% set link_classes = 'nav-link' %}
+              {% if item.mark_as_cta %}
+                {% set link_classes = link_classes ~ ' nav-cta' %}
+              {% endif %}
+              <li role="none">
+                <a href="{{ href }}"
+                   class="{{ link_classes }}"
+                   role="menuitem"
+                   {% if is_external and open_new_tab %}target="_blank" rel="noopener"{% endif %}>
+                  {{ label }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+          <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+          <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+          <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+          <li role="none"><a href="#contact" class="nav-link nav-cta" role="menuitem">Contact</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+  {% if show_progress %}
+    <div class="scroll-progress"
+         id="scrollProgress"
+         role="progressbar"
+         aria-valuenow="0"
+         aria-valuemin="0"
+         aria-valuemax="100"></div>
+  {% endif %}
+</header>

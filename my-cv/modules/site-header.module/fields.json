@@ -1,0 +1,172 @@
+[
+  {
+    "id": "branding",
+    "name": "branding",
+    "label": "Branding",
+    "type": "group",
+    "children": [
+      {
+        "id": "use_custom_logo",
+        "name": "use_custom_logo",
+        "label": "Use custom logo image",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "logo_image",
+        "name": "logo_image",
+        "label": "Logo image",
+        "type": "image",
+        "responsive": false,
+        "show_loading": false,
+        "visibility": {
+          "controlling_field": "use_custom_logo",
+          "controlling_value": true
+        }
+      },
+      {
+        "id": "logo_text",
+        "name": "logo_text",
+        "label": "Logo text (fallback)",
+        "type": "text",
+        "default": "",
+        "allow_new_line": false
+      },
+      {
+        "id": "logo_link",
+        "name": "logo_link",
+        "label": "Logo link",
+        "type": "link",
+        "default": {
+          "url": {
+            "href": "/"
+          },
+          "open_in_new_tab": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "navigation_items",
+    "name": "navigation_items",
+    "label": "Navigation items",
+    "type": "group",
+    "help_text": "Add each header link you want to display.",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "sorting_label_field": "item_label",
+      "default": 5
+    },
+    "children": [
+      {
+        "id": "item_label",
+        "name": "item_label",
+        "label": "Link label",
+        "type": "text",
+        "required": true,
+        "allow_new_line": false,
+        "default": "Section"
+      },
+      {
+        "id": "link_type",
+        "name": "link_type",
+        "label": "Link type",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["section", "Page section"],
+          ["external", "External or other link"]
+        ],
+        "default": "section"
+      },
+      {
+        "id": "section_id",
+        "name": "section_id",
+        "label": "Section ID",
+        "type": "text",
+        "allow_new_line": false,
+        "help_text": "Available sections: home, about, skills, projects, contact (without # symbol)",
+        "visibility": {
+          "controlling_field": "link_type",
+          "controlling_value": "section"
+        }
+      },
+      {
+        "id": "external_link",
+        "name": "external_link",
+        "label": "External link",
+        "type": "link",
+        "visibility": {
+          "controlling_field": "link_type",
+          "controlling_value": "external"
+        }
+      },
+      {
+        "id": "mark_as_cta",
+        "name": "mark_as_cta",
+        "label": "Highlight as CTA",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "open_in_new_tab",
+        "name": "open_in_new_tab",
+        "label": "Open in new tab",
+        "type": "boolean",
+        "default": false,
+        "visibility": {
+          "controlling_field": "link_type",
+          "controlling_value": "external"
+        }
+      }
+    ],
+    "default": [
+      {
+        "item_label": "Home",
+        "link_type": "section",
+        "section_id": "home",
+        "mark_as_cta": false
+      },
+      {
+        "item_label": "About",
+        "link_type": "section",
+        "section_id": "about",
+        "mark_as_cta": false
+      },
+      {
+        "item_label": "Skills",
+        "link_type": "section",
+        "section_id": "skills",
+        "mark_as_cta": false
+      },
+      {
+        "item_label": "Projects",
+        "link_type": "section",
+        "section_id": "projects",
+        "mark_as_cta": false
+      },
+      {
+        "item_label": "Contact",
+        "link_type": "section",
+        "section_id": "contact",
+        "mark_as_cta": true
+      }
+    ]
+  },
+  {
+    "id": "mobile",
+    "name": "mobile",
+    "label": "Mobile behaviour",
+    "type": "group",
+    "children": [
+      {
+        "id": "close_on_link_click",
+        "name": "close_on_link_click",
+        "label": "Close menu when a link is clicked",
+        "type": "boolean",
+        "default": true
+      }
+    ]
+  }
+]
