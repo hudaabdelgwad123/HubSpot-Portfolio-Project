@@ -2,8 +2,13 @@
 
 .projects-showcase__section {
   position: relative;
-  padding: var(--spacing-top, 80px) var(--spacing-right, 0) var(--spacing-bottom, 80px) var(--spacing-left, 0);
-  background: color-mix(in srgb, var(--section-bg, #ffffff) var(--section-bg-opacity, 100%), transparent);
+  padding: var(--spacing-top, 80px) var(--spacing-right, 0)
+    var(--spacing-bottom, 80px) var(--spacing-left, 0);
+  background: color-mix(
+    in srgb,
+    var(--section-bg, #ffffff) var(--section-bg-opacity, 100%),
+    transparent
+  );
   overflow: hidden;
   z-index: 1;
 }
@@ -70,7 +75,11 @@
 }
 
 .projects-showcase__filter-btn--active {
-  background: color-mix(in srgb, var(--filter-active, #6366f1) var(--filter-active-opacity, 100%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--filter-active, #6366f1) var(--filter-active-opacity, 100%),
+    transparent
+  );
   color: white;
   border-color: var(--filter-active, #6366f1);
 }
@@ -93,7 +102,11 @@
 /* Project Card */
 .projects-showcase__card {
   position: relative;
-  background: color-mix(in srgb, var(--card-bg, #ffffff) var(--card-bg-opacity, 100%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--card-bg, #ffffff) var(--card-bg-opacity, 100%),
+    transparent
+  );
   border-radius: var(--card-radius, 16px);
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, var(--card-shadow, 0.1));
@@ -136,7 +149,12 @@
 
 /* Featured Project Styling */
 .projects-showcase__card--featured {
-  border: 2px solid color-mix(in srgb, var(--featured-border, #6366f1) var(--featured-border-opacity, 100%), transparent);
+  border: 2px solid
+    color-mix(
+      in srgb,
+      var(--featured-border, #6366f1) var(--featured-border-opacity, 100%),
+      transparent
+    );
 }
 
 .projects-showcase__card--featured::before {
@@ -146,7 +164,11 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: color-mix(in srgb, var(--featured-border, #6366f1) var(--featured-border-opacity, 100%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--featured-border, #6366f1) var(--featured-border-opacity, 100%),
+    transparent
+  );
   z-index: 10;
 }
 
@@ -211,15 +233,24 @@
   top: 1rem;
   right: 1rem;
   padding: 0.5rem 1rem;
-  background: color-mix(in srgb, var(--featured-badge-bg, #6366f1) var(--featured-badge-bg-opacity, 100%), transparent);
-  color: color-mix(in srgb, var(--featured-badge-text, #ffffff) var(--featured-badge-text-opacity, 100%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--featured-badge-bg, #6366f1) var(--featured-badge-bg-opacity, 100%),
+    transparent
+  );
+  color: color-mix(
+    in srgb,
+    var(--featured-badge-text, #ffffff) var(--featured-badge-text-opacity, 100%),
+    transparent
+  );
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: var(--featured-badge-radius, 50px);
   z-index: 5;
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--featured-badge-bg, #6366f1) 40%, transparent);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--featured-badge-bg, #6366f1) 40%, transparent);
 }
 
 /* Overlay */
@@ -229,7 +260,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: color-mix(in srgb, var(--overlay-color, #6366f1) var(--overlay-opacity, 85%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--overlay-color, #6366f1) var(--overlay-opacity, 85%),
+    transparent
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -290,8 +325,16 @@
 .projects-showcase__category {
   display: inline-block;
   padding: 0.35rem 0.85rem;
-  background: color-mix(in srgb, var(--category-badge-bg, #f0f9ff) var(--category-badge-bg-opacity, 100%), transparent);
-  color: color-mix(in srgb, var(--category-badge-text, #6366f1) var(--category-badge-text-opacity, 100%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--category-badge-bg, #f0f9ff) var(--category-badge-bg-opacity, 100%),
+    transparent
+  );
+  color: color-mix(
+    in srgb,
+    var(--category-badge-text, #6366f1) var(--category-badge-text-opacity, 100%),
+    transparent
+  );
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -303,14 +346,22 @@
 .projects-showcase__project-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: color-mix(in srgb, var(--title-color, #1e293b) var(--title-opacity, 100%), transparent);
+  color: color-mix(
+    in srgb,
+    var(--title-color, #1e293b) var(--title-opacity, 100%),
+    transparent
+  );
   margin-bottom: 0.75rem;
   line-height: 1.3;
 }
 
 .projects-showcase__description {
   font-size: 1rem;
-  color: color-mix(in srgb, var(--description-color, #64748b) var(--description-opacity, 100%), transparent);
+  color: color-mix(
+    in srgb,
+    var(--description-color, #64748b) var(--description-opacity, 100%),
+    transparent
+  );
   line-height: 1.6;
   margin-bottom: 1.25rem;
 }
@@ -327,8 +378,16 @@
 
 .projects-showcase__tech-tag {
   padding: 0.4rem 0.9rem;
-  background: color-mix(in srgb, var(--tag-bg, #ec4899) var(--tag-bg-opacity, 100%), transparent);
-  color: color-mix(in srgb, var(--tag-text, #ffffff) var(--tag-text-opacity, 100%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--tag-bg, #ec4899) var(--tag-bg-opacity, 100%),
+    transparent
+  );
+  color: color-mix(
+    in srgb,
+    var(--tag-text, #ffffff) var(--tag-text-opacity, 100%),
+    transparent
+  );
   font-size: 0.85rem;
   font-weight: 500;
   border-radius: var(--tag-radius, 20px);
@@ -372,7 +431,10 @@
 
 @media (max-width: 768px) {
   .projects-showcase__section {
-    padding: var(--mobile-spacing-top, var(--spacing-top, 60px)) var(--spacing-right, 0) var(--mobile-spacing-bottom, var(--spacing-bottom, 60px)) var(--spacing-left, 0);
+    padding: var(--mobile-spacing-top, var(--spacing-top, 60px))
+      var(--spacing-right, 0)
+      var(--mobile-spacing-bottom, var(--spacing-bottom, 60px))
+      var(--spacing-left, 0);
   }
 
   .projects-showcase__grid--columns-2,

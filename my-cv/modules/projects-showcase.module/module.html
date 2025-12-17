@@ -1,22 +1,16 @@
-{% set spacing = module.style.spacing.spacing_field %}
-{% set mobile_spacing = module.style.spacing.mobile_spacing %}
-{% set bg_color = module.style.background.bg_color %}
-{% set container_size = module.style.container.select_size %}
-{% set custom_width = module.style.container.custom_width %}
-{% set card = module.style.card %}
-{% set overlay = module.style.overlay %}
-{% set category_badge = module.style.category_badge %}
-{% set featured_badge = module.style.featured_badge %}
-{% set tags = module.style.tags %}
-{% set filters = module.style.filters %}
-{% set typography = module.style.typography %}
-
-{% set container_class = 'projects-showcase__container' %}
-{% if container_size == 'full_width' %}
-  {% set container_class = 'projects-showcase__container--full' %}
-{% elif container_size == 'custom' %}
-  {% set container_class = 'projects-showcase__container--custom' %}
-{% endif %}
+{% set spacing = module.style.spacing.spacing_field %} {% set mobile_spacing =
+module.style.spacing.mobile_spacing %} {% set bg_color =
+module.style.background.bg_color %} {% set container_size =
+module.style.container.select_size %} {% set custom_width =
+module.style.container.custom_width %} {% set card = module.style.card %} {% set
+overlay = module.style.overlay %} {% set category_badge =
+module.style.category_badge %} {% set featured_badge =
+module.style.featured_badge %} {% set tags = module.style.tags %} {% set filters
+= module.style.filters %} {% set typography = module.style.typography %} {% set
+container_class = 'projects-showcase__container' %} {% if container_size ==
+'full_width' %} {% set container_class = 'projects-showcase__container--full' %}
+{% elif container_size == 'custom' %} {% set container_class =
+'projects-showcase__container--custom' %} {% endif %}
 
 <section
   class="projects-showcase__section"
@@ -108,8 +102,8 @@
         data-project-index="{{ loop.index0 }}"
       >
         <div class="projects-showcase__image-wrapper">
-          {% set has_image = project.project_image.src and project.project_image.src != "" %}
-          {% if has_image %}
+          {% set has_image = project.project_image.src and
+          project.project_image.src != "" %} {% if has_image %}
           <img
             src="{{ project.project_image.src }}"
             alt="{{ project.project_image.alt|default(project.project_title) }}"
